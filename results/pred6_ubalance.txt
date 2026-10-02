@@ -1,0 +1,11 @@
+P4 U-balancedness check (hypothesis (a) of thm:balanced, per PLB)
+A_P4: 7 x 11, census identical to pred6_balanced.stage1
+  c0-PASS PLBs: 12, of which U balanced: 6
+  c0-FAIL PLBs: 102, of which U balanced: 0
+  census gate (12 pass / 102 fail as ledgered): PASS
+  full-U balancedness (hypothesis of thm:balanced as printed): holds for 0/102 failing PLBs
+
+  witness-level check (exhaustive over submatrices of sgn(U)):
+    failing PLBs with a degree-two c0-Eulerian witness: 102/102
+    ... with EVERY degree-two witness balanced: 102
+    ... with AT LEAST ONE balanced degree-two witness: 102

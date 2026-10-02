@@ -1,0 +1,12 @@
+Task Z: three-rung tempering floor vs pseudo-prior constant error
+P1, ladder betas = [np.float64(1.0), np.float64(0.5), np.float64(0.0)], mu5 = 1e-08; exact SLEM
+========================================================================
+idealised (exact Z): gap = 0.009397  (lam2 = 0.990603, lam_min = 0.144940; DB err 8.7e-19)
+ factor f  gap, Z_1/2 only  gap, Z_1 and Z_1/2
+     0.50         0.006672            0.005054
+     0.80         0.008539            0.007735
+     1.00         0.009397            0.009397
+     1.25         0.010177            0.011349
+     2.00         0.011381            0.016407
+worst gap over the grid: 0.005054 (0.54 of the idealised floor); the floor survives factor-2 constant error (static check only; online estimation feedback not covered)
+eigenvalue ordering across all 11 cases: lam2 in [0.983593, 0.994946], lam_min in [0.041215, 0.248492]; |lam_min| < lam2 in every case: True (=> lambda_star = lambda_2, so the reported gap = 1 - lam2)

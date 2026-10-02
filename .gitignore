@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+*.egg-info/
+build/
+.pytest_cache/
+slurm_logs/*
+!slurm_logs/.gitkeep

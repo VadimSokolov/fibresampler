@@ -1,0 +1,12 @@
+====================================================================================================================================
+Near-golden-slope bands: exact single-ray gaps in the PLB, LLL-selected and oracle bases, versus the reflective sampler
+ridge q s = p t with p/q a Fibonacci ratio; uniform target; oracle = best unimodular V with entries |.|<=4 (exhaustive, m=2)
+====================================================================================================================================
+       (p,q;W,C)      N  kappa kap_sel |        SR       sel orc|.|<=4    Ref-B2    Ref-B4 |  sel/SR  orc/SR  sel/Ref  sel/orc  V_sel
+      (2,1;2,30)     51   5.59    1.08 |    0.0118    0.3709    0.3709    0.0573    0.0658 |    31.6    31.6     5.63     1.00  [(2, 1), (1, 0)]
+      (3,2;3,40)     57   9.61    1.46 |   0.00397    0.2808    0.2808    0.0179    0.0344 |    70.8    70.8     8.17     1.00  [(3, 2), (1, 1)]
+      (5,3;4,60)     69  21.95    1.60 |  0.000932    0.2544    0.2224   0.00297   0.00401 |   273.1   238.7    63.46     1.14  [(2, 1), (-5, -3)]
+      (8,5;6,80)     81  28.99    1.01 |  0.000489    0.2635    0.1754   0.00206   0.00525 |   539.3   359.0    50.19     1.50  [(-3, -2), (5, 3)]
+    (13,8;8,120)     98  43.57    1.01 |         0    0.2780    0.0474  1.11e-16         0 |  (SR~0)  (SR~0)  (Ref~0)     5.86  [(-5, -3), (-8, -5)]
+
+reading: sel/Ref > 1 means the selected basis beats the better of Ref-B2 / Ref-B4 per iteration (before the 2-8x step cost).

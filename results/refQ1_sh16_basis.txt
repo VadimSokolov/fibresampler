@@ -1,0 +1,24 @@
+======================================================================================================================
+Change of basis versus reflection on Auckland SH16 (P2, r=21, n=7, free dim 14), worst-coordinate ESS
+mean (SE) over seeds; ratios are per-seed paired with SR; pilot = single-ray chain + LLL, charged in the last column
+======================================================================================================================
+
+TARGET uniform: 5 seeds, 300000 iterations each, burn 30000, pilot 100000
+       arm   us/step     ESS_min/iter      ESS_min/s |    vs SR /iter       vs SR /s |  vs SR /s incl pilot | stuck | G0
+        SR      97.6   1.74e-02 (3.0e-04)    162.9 ( 7.2) |     1.00 (0.00)     1.00 (0.00) |                    - |  0/5 | ok
+    SR-LLL      98.3   1.44e-02 (1.4e-03)    132.9 (10.5) |     0.83 (0.08)     0.83 (0.08) |          0.60 (0.06) |  0/5 | ok
+      SR-U      97.9   1.75e-02 (4.0e-04)    164.1 ( 9.2) |     1.01 (0.02)     1.01 (0.02) |          0.73 (0.01) |  0/5 | ok
+    Ref-B2     266.8   6.97e-03 (1.5e-04)     23.8 ( 0.7) |     0.40 (0.01)     0.15 (0.00) |                    - |  0/5 | ok
+  selector decision per seed: ['identity', 'identity', 'identity', 'identity', 'identity']; surrogate gain over the PLB [1.0, 1.0, 1.0, 1.0, 1.0]
+  obliqueness (corr-eigenvalue spread): PLB 2.56, after reduction 2.82; max|V| 1, max|U V| 1; nnz/move PLB 3.6, reduced 3.4; pilot+LLL 12.4 s
+
+TARGET poiswc: 5 seeds, 300000 iterations each, burn 30000, pilot 100000
+       arm   us/step     ESS_min/iter      ESS_min/s |    vs SR /iter       vs SR /s |  vs SR /s incl pilot | stuck | G0
+        SR     265.9   1.09e-03 (4.9e-05)      3.8 ( 0.2) |     1.00 (0.00)     1.00 (0.00) |                    - |  0/5 | ok
+    SR-LLL     219.9   1.84e-02 (5.5e-03)     94.5 (47.3) |    17.05 (5.11)    27.48 (15.19) |         15.80 (7.17) |  0/5 | ok
+      SR-U     281.0   1.28e-02 (4.1e-04)     41.8 ( 1.6) |    11.76 (0.42)    11.13 (0.39) |          8.10 (0.28) |  0/5 | ok
+    SR-sel     181.5   1.20e-02 (4.9e-03)     40.9 (16.7) |    11.44 (4.71)    10.21 (4.20) |                    - |  2/5 | ok
+           over the 3 non-stuck seeds only: vs SR /iter 19.06 (1.13), vs SR /s 17.01 (1.00)
+    Ref-B2     245.5   2.08e-05 (5.3e-06)      0.1 ( 0.0) |     0.02 (0.01)     0.02 (0.01) |                    - |  0/5 | ok
+  selector decision per seed: ['climb(lll)', 'climb(lll)', 'climb(lll)', 'climb(lll)', 'climb(lll)']; surrogate gain over the PLB [20.16, 16.672, 15.867, 14.123, 17.388]
+  obliqueness (corr-eigenvalue spread): PLB 14.75, after reduction 2.53; max|V| 1, max|U V| 1; nnz/move PLB 3.6, reduced 3.6; pilot+LLL 34.6 s

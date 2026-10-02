@@ -1,0 +1,29 @@
+# Hazelton (2024) benchmark suite (positive controls)
+
+Example 6 uniform Q == Hazelton [[3,0,1],[0,3,1],[1,1,2]]/4 : True
+Example 6 uniform SLEM = 0.750000  (target 0.750000)
+Example 6 Poisson delta=1.0: SLEM=0.750000 target=0.750000 PASS
+Example 6 Poisson delta=0.5: SLEM=0.833333 target=0.833333 PASS
+Example 6 Poisson delta=0.1: SLEM=0.954545 target=0.954545 PASS
+
+Example 9 PLB U == eq.(9) : True
+Example 11 fibre size = 55  (target 55) : True
+Example 11 uniform spectral gap = 0.119828  (Hazelton 0.120) : True
+
+BENCHMARK SUITE: ALL PASS
+
+# Prediction 1: Poisson loading divergence on P1 (SR-Pois)
+
+theta5      SLEM        gap(1-lambda)   loading_rho       Hazelton_rho    bottleneck  match
+1.0        0.935203   6.479679e-02           202.306          202.306   -u_1    OK
+0.5        0.957467   4.253264e-02           636.725          636.725   -u_2    OK
+0.2        0.978824   2.117552e-02          3719.182         3719.182   -u_2    OK
+0.1        0.988409   1.159091e-02         14536.175        14536.175   -u_2    OK
+0.05       0.993904   6.096197e-03         57470.642        57470.642   -u_2    OK
+0.01       0.998726   1.273918e-03       1423381.781      1423381.781   -u_2    OK
+
+Loading rho ported verbatim from Hazelton SM-code.r (MaxEdgeLoading): matches bit-for-bit.
+Uniform: rho=4.0926 (paper 4.093). Bottleneck move switches -u_1 -> -u_2 as theta5 falls,
+reproducing Hazelton Example 11 ('the most overloaded transition is -u_2').
+
+PREDICTION 1 HELD: gap monotone-decreasing to 1.27e-03 (SLEM->1), rho monotone-diverging to 1.423e+06

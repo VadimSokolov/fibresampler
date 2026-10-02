@@ -1,0 +1,120 @@
+============================================================================================================================
+Loading obstruction versus the lattice basis: exact single-ray gaps, product-Poisson target (cell j* has mean mu, others 1)
+PLB = the paper's partition lattice basis; hold-fixed = Hermite recombination of the bottleneck row (identity of j* only);
+selected = Mahalanobis LLL / surrogate climb on the target's exact free-coordinate law; union = PLB and hold-fixed moves together
+============================================================================================================================
+
+P1: N=55, m=4, bottleneck cell 4; hold-fixed V columns [(1, 0, 0, 0), (0, 0, 0, 1), (0, -1, 1, 0), (0, 1, 0, 0)], 3 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 3, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.064797     0.077879     0.092984     0.115376
+     3e-01     0.029319     0.092785     0.092785     0.106134
+     1e-01     0.011591     0.104634     0.136941     0.094993
+     3e-02     0.003737     0.112696     0.145965     0.090012
+     1e-02     0.001274     0.116500     0.148540     0.088447
+     3e-03     0.000385     0.118471     0.149409     0.087883
+     1e-03     0.000129     0.119235     0.149653     0.087720
+     1e-04     0.000013     0.119651     0.149762     0.087646
+     1e-06     0.000000     0.119701     0.149774     0.087638
+  slope (mu <= 0.03): PLB 0.998, hold-fixed -0.005, selected -0.002, union 0.002
+
+table(4,4|3,3,2): N=10, m=2, bottleneck cell 0; hold-fixed V columns [(-1, 1), (1, 0)], 1 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 2, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.276393     0.276393     0.276393     0.400000
+     3e-01     0.259824     0.280487     0.259824     0.393253
+     1e-01     0.192171     0.294791     0.294791     0.362433
+     3e-02     0.089348     0.317373     0.317373     0.305325
+     1e-02     0.034601     0.331593     0.331593     0.271822
+     3e-03     0.010977     0.338485     0.338485     0.256967
+     1e-03     0.003719     0.340718     0.340718     0.252365
+     1e-04     0.000375     0.341768     0.341768     0.250238
+     1e-06     0.000004     0.341885     0.341885     0.250002
+  slope (mu <= 0.03): PLB 0.984, hold-fixed -0.005, selected -0.005, union 0.015
+
+k*=2 canonical 2x4: N=6, m=2, bottleneck cell 0; hold-fixed V columns [(1, -2), (0, 1)], 1 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 2, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.206849     0.206849     0.323223     0.323223
+     3e-01     0.051367     0.308879     0.308879     0.250035
+     1e-01     0.008159     0.386985     0.386985     0.237464
+     3e-02     0.000844     0.438395     0.438395     0.243854
+     1e-02     0.000098     0.464562     0.464562     0.247660
+     3e-03     0.000009     0.480621     0.480621     0.249265
+     1e-03     0.000001     0.488817     0.488817     0.249752
+     1e-04     0.000000     0.496464     0.496464     0.249975
+     1e-06     0.000000     0.499646     0.499646     0.250000
+  slope (mu <= 0.03): PLB 1.996, hold-fixed -0.011, selected -0.011, union -0.002
+
+k*=2 hit 1 (N=6): N=6, m=2, bottleneck cell 0; hold-fixed V columns [(-2, 1), (1, 0)], 1 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 2, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.181895     0.181895     0.295876     0.295876
+     3e-01     0.043449     0.306387     0.306387     0.245682
+     1e-01     0.007012     0.393253     0.393253     0.239614
+     3e-02     0.000734     0.444594     0.444594     0.245217
+     1e-02     0.000085     0.468732     0.468732     0.248205
+     3e-03     0.000008     0.483028     0.483028     0.249439
+     1e-03     0.000001     0.490228     0.490228     0.249811
+     1e-04     0.000000     0.496914     0.496914     0.249981
+     1e-06     0.000000     0.499691     0.499691     0.250000
+  slope (mu <= 0.03): PLB 1.995, hold-fixed -0.009, selected -0.009, union -0.001
+
+k*=2 hit 2 (N=6): N=6, m=2, bottleneck cell 0; hold-fixed V columns [(-1, 1), (1, 0)], 1 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 3, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.177143     0.365322     0.365322     0.364412
+     3e-01     0.034579     0.445961     0.445961     0.272891
+     1e-01     0.004243     0.481313     0.481313     0.252817
+     3e-02     0.000386     0.494369     0.494369     0.250257
+     1e-02     0.000043     0.498122     0.498122     0.250029
+     3e-03     0.000004     0.499437     0.499437     0.250003
+     1e-03     0.000000     0.499812     0.499812     0.250000
+     1e-04     0.000000     0.499981     0.499981     0.250000
+     1e-06     0.000000     0.500000     0.500000     0.250000
+  slope (mu <= 0.03): PLB 2.000, hold-fixed -0.001, selected -0.001, union 0.000
+
+k*=2 hit 3 (N=6): N=6, m=4, bottleneck cell 0; hold-fixed V columns [(1, -2, 0, 0), (0, -2, 0, 1), (0, -2, 1, 0), (0, 1, 0, 0)], 3 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 4, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.075366     0.040343     0.125000     0.066667
+     3e-01     0.010766     0.050000     0.000000     0.030383
+     1e-01     0.001244     0.050000     0.000000     0.025622
+     3e-02     0.000112     0.050000     0.000000     0.025056
+     1e-02     0.000012     0.050000     0.000000     0.025006
+     3e-03     0.000001     0.050000     0.000000     0.025001
+     1e-03     0.000000     0.050000     0.000000     0.025000
+     1e-04     0.000000     0.050000     0.000000     0.025000
+     1e-06     0.000000     0.050000     0.000000     0.025000
+  slope (mu <= 0.03): PLB 2.000, hold-fixed -0.000, selected nan, union 0.000
+
+k*=2 hit 4 (N=6): N=6, m=2, bottleneck cell 1; hold-fixed V columns [(-2, 1), (1, 0)], 1 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 2, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.266146     0.266146     0.375000     0.375000
+     3e-01     0.078881     0.332435     0.332435     0.274787
+     1e-01     0.012662     0.393620     0.393620     0.241764
+     3e-02     0.001284     0.439674     0.439674     0.244301
+     1e-02     0.000148     0.464821     0.464821     0.247712
+     3e-03     0.000013     0.480664     0.480664     0.249270
+     1e-03     0.000001     0.488825     0.488825     0.249752
+     1e-04     0.000000     0.496465     0.496465     0.249975
+     1e-06     0.000000     0.499646     0.499646     0.250000
+  slope (mu <= 0.03): PLB 1.997, hold-fixed -0.010, selected -0.010, union -0.002
+
+k*=2 hit 5 (N=7): N=7, m=3, bottleneck cell 1; hold-fixed V columns [(-2, 0, 1), (-1, 1, 0), (1, 0, 0)], 2 slice move(s); irreducible: PLB True, hold-fixed True; lobes: PLB 4, hold-fixed 1
+        mu          PLB   hold-fixed     selected        union
+     1e+00     0.133195     0.133195     0.133195     0.136874
+     3e-01     0.021695     0.134130     0.175747     0.082033
+     1e-01     0.002682     0.131540     0.191860     0.070010
+     3e-02     0.000248     0.130006     0.195932     0.066313
+     1e-02     0.000028     0.129485     0.196841     0.065191
+     3e-03     0.000002     0.129293     0.197131     0.064783
+     1e-03     0.000000     0.129237     0.197211     0.064664
+     1e-04     0.000000     0.129212     0.197247     0.064611
+     1e-06     0.000000     0.129209     0.197251     0.064605
+  slope (mu <= 0.03): PLB 1.999, hold-fixed 0.000, selected -0.000, union 0.002
+
+SUMMARY (slope of log gap vs log mu; gap at mu = 1e-6)
+                       fibre lobes PLB lobes hf | slope PLB  slope hf slope sel |    gap PLB     gap hf    gap sel
+                          P1         3        1 |     0.998    -0.005    -0.002 |   1.29e-07   1.20e-01   1.50e-01
+            table(4,4|3,3,2)         2        1 |     0.984    -0.005    -0.005 |   3.75e-06   3.42e-01   3.42e-01
+          k*=2 canonical 2x4         2        1 |     1.996    -0.011    -0.011 |   1.00e-12   5.00e-01   5.00e-01
+            k*=2 hit 1 (N=6)         2        1 |     1.995    -0.009    -0.009 |   8.75e-13   5.00e-01   5.00e-01
+            k*=2 hit 2 (N=6)         3        1 |     2.000    -0.001    -0.001 |   4.30e-13   5.00e-01   5.00e-01
+            k*=2 hit 3 (N=6)         4        1 |     2.000    -0.000       nan |   1.25e-13   5.00e-02   0.00e+00
+            k*=2 hit 4 (N=6)         2        1 |     1.997    -0.010    -0.010 |   1.50e-12   5.00e-01   5.00e-01
+            k*=2 hit 5 (N=7)         4        1 |     1.999     0.000    -0.000 |   2.78e-13   1.29e-01   1.97e-01

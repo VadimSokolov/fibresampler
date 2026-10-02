@@ -1,0 +1,18 @@
+Prediction 4 plateau mechanism ablation: target x baseline on bare bands
+Ref = best exact gap over B_max in {2,4}, uniform pi_B (as Pred 3/4)
+==============================================================================
+    band  kappa   target   g_Gibbs   g_MHray  g_bestRef  Ref/Gibbs  Ref/MHray
+      24   4.26  uniform   0.03246   0.02115    0.12538       3.86       5.93
+      24   4.26    ridge   0.13365   0.07413    0.15009       1.12       2.02
+      32   5.67  uniform   0.01858   0.01210    0.10850       5.84       8.97
+      32   5.67    ridge   0.10466   0.05884    0.16203       1.55       2.75
+
+product-structure check: bare-band ridge Ref/MHray vs ledgered plateau
+  C=24 (kappa=4.26): bare-band 2.025 vs product plateau 2.025  (match => product contributes nothing)
+  C=32 (kappa=5.67): bare-band 2.754 vs product plateau 2.754  (match => product contributes nothing)
+
+reading: the ridge target speeds BOTH single-ray baselines ~4x while
+the reflective gap barely moves, compressing the geometry premium;
+the Metropolis-ray baseline is ~1.5-1.8x weaker than Gibbs, re-inflating
+the quoted ratio. The bounce-count mixture is common to all arms and
+is NOT the mechanism; ~kappa/2 is the empirical level of this design.

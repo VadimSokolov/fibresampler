@@ -1,0 +1,21 @@
+============================================================================================
+REFEREE M5 -- axis defect kappa (Def 13) vs obliqueness (correlation eigenvalue spread)
+exact uniform-law moments over each enumerated fibre, all in the PLB free frame x_2
+============================================================================================
+           fibre     N   kappa  oblq_corr sqrt2*kappa   ratio spread_cov align_diag
+    band(w2,C12)    31    2.15       2.58        3.04   0.848        2.6     1.0000
+    band(w2,C24)    61    4.26       5.03        6.02   0.835        5.0     1.0000
+    band(w2,C40)   101    7.08       8.29       10.01   0.828        8.3     1.0000
+    band(w1,C30)    46   10.61      10.95       15.00   0.730       11.0     1.0000
+              P1    55    1.22       1.75        1.73   1.010        2.1     0.5132
+          P4(x1)    64    1.56       1.65        2.21   0.745        1.8     0.2237
+          P4(x2)   486    1.56       1.64        2.21   0.742        1.8     0.2223
+
+READING: obliqueness_corr tracks kappa LINEARLY on every enumerable fibre, the
+ratio oblq/(sqrt2*kappa) staying near 1 on the band ladder and O(1) on the P1 and
+P4 network fibres, with the principal correlation axis aligned to the long fibre
+diagonal (align_diag near 1). The covariance spread additionally carries route-
+SCALE heterogeneity, which reflection does NOT target (Section 6.1). So the axis
+defect kappa IS the obliqueness reflection targets, up to the constant sqrt(2):
+the real-data substitution of obliqueness for kappa is justified, not a change of
+object.

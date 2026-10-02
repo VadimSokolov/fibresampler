@@ -1,0 +1,23 @@
+============================================================================================
+REFEREE POINT D -- SH16 per-B_max cost/mixing breakdown (uniform fibre target)
+r=21 routes, n=7 links, free dim 14; 300,000 iters + 30,000 burn, seed 20260812
+cost ratio = time/step_Ref / time/step_SR ; guard = proposals killed before MH
+============================================================================================
+
+  single-ray Gibbs: time/step 35.42 us, ESS/iter 5105, ESS/sec 436.8, acc 1.00
+
+  B_max  us/step  cost/SR    acc   guard  m_bounce  m_path  ESS/iter  degrad  ESS/sec  ESSsecR
+      2    97.63     2.76   0.44   0.309      0.71   336.5      2082    2.45     64.6    0.148
+      4   147.44     4.16   0.39   0.428      1.47   558.3      1427    3.58     29.3    0.067
+      8   240.46     6.79   0.33   0.509      3.24  1140.5       667    7.65      8.4    0.019
+     16   434.08    12.26   0.30   0.555      7.06  2411.0       372   13.74      2.6    0.006
+
+DECOMPOSITION of the ESS/sec drop (resolves the 6.1 inconsistency):
+  ESS/sec_Ref / ESS/sec_SR  =  (1/degrad)  x  (1/cost_ratio)
+    B_max= 2: 0.148 = (1/2.45) x (1/2.76) = 0.408 x 0.363
+    B_max= 4: 0.067 = (1/3.58) x (1/4.16) = 0.280 x 0.240
+    B_max= 8: 0.019 = (1/7.65) x (1/6.79) = 0.131 x 0.147
+    B_max=16: 0.006 = (1/13.74) x (1/12.26) = 0.073 x 0.082
+  cost ratio grows 2.76 -> 12.26 for B_max 2 -> 16 (8x): factor 4.4, i.e. ~O(B_max), NOT 85x.
+  The ESS/sec fall is cost (~4x) COMPOUNDED with per-iteration degradation
+  (blind large-B bouncing on a near-isotropic kappa~2.6 fibre), not a cost anomaly.

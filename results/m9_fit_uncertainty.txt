@@ -1,0 +1,20 @@
+========================================================================================
+REFEREE POINT M9 -- spectrum-law exponent fits: window, local slopes, standard errors
+P1 (alpha=1.9); exact joint (x,level) tempering gap; fit window mu5 in 0.01, 0.001, 0.0001, 1e-06, 1e-08
+law: gap = Theta(mu5^{k* beta_min}), k*=1 on P1; reported exponent = OLS log-log slope
+========================================================================================
+  beta_min     exponent(SE)     R^2   local slopes per decade-pair
+      0.00    0.050(0.011)  0.8672   +0.131 +0.079 +0.041 +0.015
+      0.25    0.264(0.004)  0.9992   +0.300 +0.273 +0.259 +0.253
+      0.50    0.519(0.005)  0.9997   +0.555 +0.531 +0.514 +0.504
+      0.75    0.766(0.004)  0.9999   +0.791 +0.777 +0.763 +0.754
+      1.00    1.000(0.000)  1.0000   +0.997 +1.000 +1.000 +1.000
+
+READING: the OLS exponents reproduce Table tab:spectrum (0.050,0.264,0.519,
+0.766,1.000). They sit slightly ABOVE beta_min (by 0.01-0.02, a few SE): the
+window [1e-8,1e-2] has not fully reached the asymptote, and the local slopes
+decrease monotonically toward beta_min at the deep end (e.g. beta_min=0.5:
+0.555 -> 0.504; beta_min=0.75: 0.791 -> 0.754), which is the honest convergence
+diagnostic. The SEs (<=0.011) measure fit precision, not this finite-window bias.
+At beta_min=0 it is not a power law (R^2=0.87, local slopes 0.131 -> 0.015 -> 0):
+the approach to the constant floor, not a surviving exponent.

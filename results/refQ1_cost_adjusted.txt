@@ -1,0 +1,19 @@
+======================================================================================================================
+Gap per microsecond (exact uniform-target gap over measured time per step, same implementation), relative ratios
+sel = recommend_basis choice (identity when the surrogate gain is below 1.10); cost(sel) = cost of SR-LLL (same single-ray step)
+best Ref = the better of Ref-B2 / Ref-B4 by gap per microsecond
+======================================================================================================================
+                   fibre | gap sel/SR cost LLL/SR (g/c) sel/SR | g sel/best Ref cost Ref/LLL (g/c) sel/Ref
+            band(w2,C12) |       2.27        1.01         2.25 |           1.99         3.81          7.56
+            band(w2,C24) |      10.28        1.03         9.99 |           2.66         4.46         11.87
+            band(w2,C40) |      30.96        1.02        30.27 |           4.55         4.66         21.19
+            band(w1,C30) |      58.39        1.01        57.72 |           5.55         6.93         38.41
+      sloped(3,2;W4,C30) |      26.97        1.02        26.51 |           9.70         4.25         41.20
+      sloped(3,2;W3,C30) |      35.78        1.01        35.37 |           8.43         3.98         33.51
+      sloped(5,3;W6,C40) |      49.32        0.99        49.60 |           4.67         6.46         30.19
+                      P1 |       1.00        0.97         1.03 |           2.29         2.35          5.37
+        table(4,4|3,3,2) |       1.00        1.00         1.00 |           1.59         3.15          4.99
+        table(6,6|1,5,6) |      29.41        1.01        29.04 |           9.47         3.02         28.59
+                  P4(x1) |       1.00        1.01         0.99 |           2.15         2.55          5.48
+
+thin tilted fibres where the selector moved off the PLB (gap ratio over SR above 2): cost-adjusted advantage over the best reflective arm 7.6x to 41.2x across 8 fibres

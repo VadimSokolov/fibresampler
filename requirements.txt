@@ -1,0 +1,4 @@
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+# optional: numba (experiments/refQ2_tempering_tuning.py); sympy, mpmath, networkx (some helpers/)

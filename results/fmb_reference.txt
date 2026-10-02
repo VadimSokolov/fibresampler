@@ -1,0 +1,19 @@
+FMB reference: exact SLEM of full-Markov-basis (4ti2) hit-and-run
+========================================================================
+P1: 4ti2 minimal Markov basis has 4 moves (PLB has 4); fibre size 55
+  uniform target: gap PLB=0.119828  FMB=0.119828  FMB/PLB=1.000
+    theta5      gap PLB      gap FMB  FMB/PLB
+      1.00     0.064797     0.064797    1.000
+      0.50     0.042533     0.042533    1.000
+      0.20     0.021176     0.021176    1.000
+      0.10     0.011591     0.011591    1.000
+      0.05     0.006096     0.006096    1.000
+      0.01     0.001274     0.001274    1.000
+  FMB endpoint slope of gap vs theta5 over [0.01,1]: 0.853 (Theta(theta5) collapse, basis-independent)
+table 2x3: 4ti2 minimal Markov basis has 3 moves (PLB has 2); fibre size 10
+  zero-stratum components under u_(j*)=0 moves, PLB: 2
+  zero-stratum components under u_(j*)=0 moves, FMB: 1
+        mu      gap PLB      gap FMB  FMB/PLB
+      1.00     0.276393     0.466667    1.688
+      0.10     0.192171     0.452193    2.353
+      0.01     0.034601     0.356391   10.300

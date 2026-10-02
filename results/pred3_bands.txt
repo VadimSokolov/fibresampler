@@ -1,0 +1,8 @@
+Prediction 3 band family: exact gaps, uniform target
+Gibbs-SR baseline vs best reflective over B_max in {2,4}
+========================================================================
+  kappa  fibre   GibbsSR        B2        B4  best   ratio
+   2.15     31    0.1172    0.1337    0.0863 B2       1.14
+   4.26     61    0.0325    0.1254    0.0897 B2       3.86
+   7.08    101    0.0120    0.0817    0.0878 B4       7.31
+  10.61     46    0.0070    0.0403    0.0737 B4      10.57

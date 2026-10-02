@@ -1,0 +1,19 @@
+Referee 2.10: 3x3x2 no-three-way-interaction fibre, spectral composition
+==========================================================================
+base fibre |F|=12, components under PLB lattice basis=2 (DISCONNECTED => tempering gap 0, Prop:scope)
+rim |F^(-1)|=164 (blow-up 13.7x)
+margins y (independent rows) = [2, 0, 4, 2, 1, 2, 2, 2, 3, 3, 3, 4, 3, 2]; cols1=[0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 16]
+rim connectivity: components under PLB on F^(-1) = 1 (1 => rim repairs reducibility)
+bottleneck cell jstar=3
+
+        mu   temper(base)     rim only   rim+ladder
+       0.1      5.551e-16    1.953e-02    1.981e-02
+      0.01      5.551e-16    3.941e-03    1.258e-02
+     0.001      5.551e-16    4.519e-04    8.437e-03
+    0.0001      5.551e-16    4.595e-05    6.720e-03
+     1e-06      5.551e-16    4.604e-07    5.884e-03
+
+rim-only log-log slope = 0.939 (~1 => corridor created but tracking, Theta(mu))
+composition floors: last-decade gap 5.884e-03, slope 0.104 (~0 => flattened)
+
+VERDICT: on the honest (non-artificial) 3x3x2 no-three-way fibre, tempering fails identically (reducible), the rim alone creates a Theta(mu) corridor, and the rim+uniform-rung composition floors: the create-then-flatten mechanism holds beyond the two-way example.

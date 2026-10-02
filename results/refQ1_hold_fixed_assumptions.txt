@@ -1,0 +1,14 @@
+========================================================================================================================
+Hypotheses of the converse on the PLB and on the hold-fixed basis: lobes K of D under the u_{j*}=0 moves, border drain, corridor height k*
+========================================================================================================================
+                       fibre     N  |D|  |B| |  PLB: K   drained  k* | hold-fixed: K   drained  max len slice moves | max|U| max|UV|  nnz U nnz UV
+                          P1    55   23   32 |       3     32/32   1 |             1     32/32        4           3 |      1       1  3.250  3.250
+            table(4,4|3,3,2)    10    2    8 |       2       8/8   1 |             1       8/8        4           1 |      1       1  4.000  4.000
+          k*=2 canonical 2x4     6    2    4 |       2       4/4   2 |             1       4/4        3           1 |      2       2  2.500  2.500
+            k*=2 hit 1 (N=6)     6    2    4 |       2       4/4   2 |             1       4/4        3           1 |      2       2  2.000  2.000
+            k*=2 hit 2 (N=6)     6    3    3 |       3       3/3   2 |             1       3/3        2           1 |      2       2  2.500  2.500
+            k*=2 hit 3 (N=6)     6    4    2 |       4       2/2   2 |             1       2/2        2           3 |      2       2  2.500  2.750
+            k*=2 hit 4 (N=6)     6    2    4 |       2       4/4   2 |             1       4/4        3           1 |      2       2  2.500  2.500
+            k*=2 hit 5 (N=7)     7    4    3 |       4       3/3   2 |             1       3/3        2           2 |      2       2  2.333  2.333
+
+hypotheses (a) K = 1 and (b) full border drain hold for the hold-fixed basis on every fibre listed: YES

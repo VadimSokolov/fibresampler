@@ -1,0 +1,17 @@
+
+=== band (w=1, C=14), kappa=4.95, product fibre 220 states ===
+  [uniform-rung kernels assembled in 0.5s]
+        mu  SR-direct  Split-ray  Split-ref |    SR-band   SR-basis Split-band Split-basis | basis/ref SRbasis/ref
+     1e-01    0.01504   0.007521    0.01573 |    0.05916     0.1371    0.03836     0.04678 |      2.97        8.71   [db 6e-17]
+     1e-02   0.007511   0.007521    0.01171 |   0.007511     0.1313    0.02496     0.03764 |      3.21       11.21   [db 6e-17]
+     1e-03  0.0007707   0.007521    0.01111 |  0.0007707     0.1306    0.02267      0.0358 |      3.22       11.75   [db 6e-17]
+     1e-04  7.727e-05   0.007521    0.01105 |  7.727e-05     0.1305    0.02243      0.0356 |      3.22       11.82   [db 6e-17]
+
+=== band (w=1, C=22), kappa=7.78, product fibre 340 states ===
+  [uniform-rung kernels assembled in 0.7s]
+        mu  SR-direct  Split-ray  Split-ref |    SR-band   SR-basis Split-band Split-basis | basis/ref SRbasis/ref
+     1e-01    0.00636    0.00318    0.01573 |    0.05916     0.1371    0.03836     0.04678 |      2.97        8.71   [db 5e-17]
+     1e-02    0.00636    0.00318    0.01171 |   0.007511     0.1313    0.02496     0.03764 |      3.21       11.21   [db 6e-17]
+     1e-03  0.0007707    0.00318    0.01111 |  0.0007707     0.1306    0.02267      0.0358 |      3.22       11.75   [db 8e-17]
+     1e-04  7.727e-05    0.00318    0.01105 |  7.727e-05     0.1305    0.02243      0.0356 |      3.22       11.82   [db 3e-17]
+python3 exp3b_fusion_basis.py  9.71s user 0.10s system 99% cpu 9.879 total

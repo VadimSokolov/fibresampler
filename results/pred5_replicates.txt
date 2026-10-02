@@ -1,0 +1,16 @@
+Prediction 5 headline-cell seed replicates (product, mu*=1)
+N = 1,000,000 + 50,000 burn-in per chain; seeds [20260701, 20260702, 20260703, 20260704, 20260705]
+worst-functional ESS/iter, same functional set and rules as the grid
+==========================================================================
+GATE seed 20260701 reproduces the ledgered grid cells (34101/72455/34821/70181): PASS
+
+      seed   SR-pois  Ref-pois     SR-nb    Ref-nb  ratio pois  ratio nb
+  20260701     34101     72455     34821     70181       2.125     2.015
+  20260702     34937     72258     35421     70316       2.068     1.985
+  20260703     34708     72958     34401     72234       2.102     2.100
+  20260704     35594     73346     34224     73385       2.061     2.144
+  20260705     35622     71789     35400     73423       2.015     2.074
+
+Ref/SR worst-functional ESS/iter, mean +/- SE over 5 seeds:
+  Poisson pair: 2.074 +/- 0.019   (range 2.015..2.125)
+  NB pair     : 2.064 +/- 0.029   (range 1.985..2.144)

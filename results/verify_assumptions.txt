@@ -1,0 +1,23 @@
+================================================================================
+REFEREE POINT M8 -- verification of the geometric assumptions (enumerable fibres)
+moves = augmenting PLB M_U = {+-U[:,b]}; all checks are exact finite computations
+================================================================================
+
+P1 (Hazelton Ex.2/Ex.11): fibre size 55, bottleneck coord index 4
+  |D| (x_jstar=0 stratum)      : 23
+  K  (lobes of D, u_jstar=0)   : 3    [Assumption multi-lobe: K>=2 -> HOLDS]
+  border states |B|            : 32
+  drained by never-raising path: 32/32   [Assumption border-drain -> HOLDS]  (max drain length 4)
+  corridor height k*           : 1
+
+2x3 table, running example: fibre size 10, bottleneck coord index 0
+  |D| (x_jstar=0 stratum)      : 2
+  K  (lobes of D, u_jstar=0)   : 2    [Assumption multi-lobe: K>=2 -> HOLDS]
+  border states |B|            : 8
+  drained by never-raising path: 8/8   [Assumption border-drain -> HOLDS]  (max drain length 3)
+  corridor height k*           : 1
+
+READING: on both fibres the PLB move set gives K>=2 lobes (the loading
+bottleneck of the theorems), every border state drains to D without raising the
+bottleneck coordinate, and the lobes reconnect at corridor height k*=1 (a single
+unit raise). These are exactly the hypotheses Assumptions/Definitions invoke.

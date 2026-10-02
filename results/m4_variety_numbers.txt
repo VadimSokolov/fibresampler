@@ -1,0 +1,71 @@
+======================================================================================
+M4 breadth -- ESS/second across a VARIETY of real network-tomography problems
+  300000 iters + 30000 burn, seed 20260709; kernels = pred5_ess.py; alpha_NB=1.9
+  Vardi/Tebaldi-West 4-node (canonical), Hazelton P1, Auckland SH16 (real road)
+  Vardi PLB cols1 (0-indexed, unimodular) = (0, 1, 3, 4, 7, 8, 11)
+======================================================================================
+
+=== P1 Hazelton Ex.2/11:  r=8 routes, n=4 links, free dim 4 ===
+  anisotropy: covariance spread 2.14 (route-SCALE); correlation spread 1.76 (OBLIQUENESS)
+  max-ent theta* range 0.56..1.3; 8 route(s) below floor 25
+  -- target uniform --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    uniform      SR    16.4  1.000    21681      3997      5724   ok
+    uniform  Ref/B2    37.6  0.271     9715       782      1033   ok
+    uniform  Ref/B4    48.2  0.213     6105       384       567   ok
+  -- target pois-wc --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    pois-wc      SR    19.2  1.000    41332      6534      6787   ok
+    pois-wc  Ref/B2    36.7  0.084     5818       480       694   ok
+  -- target pois-me --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    pois-me      SR    19.1  1.000    11116      1759      3872   ok
+    pois-me  Ref/B2    42.2  0.187     6654       477       617   ok
+  uniform  Ref/B2 : SR ESS/sec vs single-ray  = 782.37 / 3997.43 (ratio 0.20)
+  pois-me  worst-coord ESS/sec (loading) = 1759.00
+
+=== VARDI 4-node (Vardi96/TW98):  r=12 routes, n=7 links, free dim 5 ===
+  anisotropy: covariance spread 4.30 (route-SCALE); correlation spread 1.99 (OBLIQUENESS)
+  max-ent theta* range 0.44..18.0; 12 route(s) below floor 25
+  -- target uniform --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    uniform      SR    16.5  1.000    17899      3297      4027   ok
+    uniform  Ref/B2    62.8  0.445     7315       353       549   ok
+    uniform  Ref/B4    90.2  0.415     4467       150       304   ok
+  -- target pois-wc --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    pois-wc      SR    22.2  1.000    17773      2422      3818   ok
+    pois-wc  Ref/B2    76.0  0.127     2618       104       204   ok
+  -- target pois-me --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    pois-me      SR    21.4  1.000     2198       311      1112   ok
+    pois-me  Ref/B2    56.5  0.122      572      30.7       113   ok
+  uniform  Ref/B2 : SR ESS/sec vs single-ray  = 353.11 / 3296.65 (ratio 0.11)
+  pois-me  worst-coord ESS/sec (loading) = 310.93
+
+=== P2 Auckland SH16:  r=21 routes, n=7 links, free dim 14 ===
+  anisotropy: covariance spread 17.83 (route-SCALE); correlation spread 2.55 (OBLIQUENESS)
+  max-ent theta* range 0.57..964.2; 5 route(s) below floor 25
+  -- target uniform --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    uniform      SR    44.7  1.000     5347       363       443   ok
+    uniform  Ref/B2    99.3  0.435     2028      61.9      81.3   ok
+    uniform  Ref/B4   148.6  0.392     1188      24.2      49.1   ok
+  -- target pois-wc --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    pois-wc      SR   105.2  1.000      285       8.2      31.8   ok
+    pois-wc  Ref/B2   101.0  0.036      5.3       0.2       1.1   ok
+  -- target pois-me --
+     target     smp  us/stp    acc   ESSmin  ESSmin/s  ESSmed/s   G0
+    pois-me      SR   100.5  1.000     14.4       0.4       2.1   ok
+    pois-me  Ref/B2    51.2  0.009      2.8       0.2       0.2   ok
+  uniform  Ref/B2 : SR ESS/sec vs single-ray  = 61.89 / 362.62 (ratio 0.17)
+  pois-me  worst-coord ESS/sec (loading) = 0.43
+
+--- cross-problem summary (obliqueness vs reflection) ---
+                       problem free corr(obliq)  uni Ref/SR loading ESS/s
+           P1 Hazelton Ex.2/11    4        1.76        0.20       1759.00
+   VARDI 4-node (Vardi96/TW98)    5        1.99        0.11        310.93
+              P2 Auckland SH16   14        2.55        0.17          0.43
+
+  (elapsed 434s)

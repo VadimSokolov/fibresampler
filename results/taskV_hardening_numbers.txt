@@ -1,0 +1,47 @@
+==========================================================================
+RUN 1 -- exponent law: gap = Theta(mu5^{beta_min}) on P1 (alpha=1.9)
+==========================================================================
+  ladders in steps of dbeta=0.25 down to beta_min; slope fit over mu5<=0.01
+   beta_min                 ladder  measured slope  predicted     maxDB
+       0.00    [1,0.75,0.5,0.25,0]           0.050       0.00   2.6e-18
+       0.25      [1,0.75,0.5,0.25]           0.264       0.25   3.0e-18
+       0.50           [1,0.75,0.5]           0.519       0.50   3.5e-18
+       0.75               [1,0.75]           0.766       0.75   5.2e-18
+       1.00                    [1]           1.000       1.00   3.5e-18
+  => exponent = beta_min to <0.06 on all 5 points: LAW CONFIRMED
+
+==========================================================================
+RUN 2 -- constant floor replicates on the 2x3 table (3-rung [1,0.5,0])
+==========================================================================
+  table N=10
+        mu   SR-NB gap  temp[1,.5,0] gap  local slope     maxDB
+      0.01   1.502e-02          0.036694                2.1e-17
+     0.001   1.541e-03          0.020147      +0.2604   6.9e-18
+    0.0001   1.545e-04          0.014688      +0.1373   6.9e-18
+     1e-06   1.546e-06          0.012325      +0.0381   6.9e-18
+     1e-08   1.546e-08          0.012085      +0.0043   6.9e-18
+     1e-12   1.546e-12          0.012058      +0.0002   2.1e-17
+     1e-16   0.000e+00          0.012058      +0.0000   1.7e-18
+  => tempered gap floors at ~0.01206 (flat: yes); SR-NB collapses. Escape is problem-independent.
+
+==========================================================================
+RUN 3 -- corridor height k on P1 (cheapest inter-lobe crossing)
+==========================================================================
+  |D|=23, lobes=3 (Assumption A)
+  cheapest crossing raises x_(j*) to max height k = 1
+  => provable law gap=Theta(mu^(k*beta_min)); observed exponent=beta_min consistent with k=1. k=1 CONFIRMED
+
+==========================================================================
+RUN 4 -- level overhead: gap vs L at fixed mu (escape regime, ladder ->0)
+==========================================================================
+  mu5=1e-08; linear ladder [1..0] with L+1 rungs
+     L          gap        gap*L      gap*L^2
+     2  9.39743e-03  1.87949e-02  3.75897e-02
+     4  4.98235e-03  1.99294e-02  7.97177e-02
+     8  2.89047e-03  2.31238e-02  1.84990e-01
+    16  1.52966e-03  2.44746e-02  3.91594e-01
+    32  5.86322e-04  1.87623e-02  6.00394e-01
+    64  1.86745e-04  1.19517e-02  7.64908e-01
+  => gap ~ 1/L^1.10  (p~1 => level path-length bottleneck; p~2 => level diffusion bottleneck)
+
+figure -> results/fig_taskV_exponent_law.pdf

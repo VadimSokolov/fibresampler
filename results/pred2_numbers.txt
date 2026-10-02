@@ -1,0 +1,37 @@
+# Prediction 2 (keystone): NB augmentation spectral-gap floor test
+
+Exact SLEM of the joint chain (hit-and-run fibre update, R=1),
+via quadrature operator K; Poisson baseline is Prediction 1's SR-Pois.
+
+mu5        Pois_gap     NB_gap(a=0.5)  NB_gap(a=1.9)  NB_gap(a=5.0)  NB_gap(a=50.0)     NB_rho(a=1.9)
+1.0        6.4797e-02  9.7684e-03  3.4436e-02  5.0021e-02  6.3067e-02     23.5
+0.1        1.1591e-02  3.1801e-03  7.8395e-03  9.9365e-03  1.1409e-02     563.5
+0.01       1.2739e-03  4.7405e-04  9.5085e-04  1.1335e-03  1.2585e-03     40146.8
+0.001      1.2872e-04  5.2489e-05  9.7707e-05  1.1513e-04  1.2722e-04     3832603.1
+0.0001     1.2885e-05  5.0188e-06  9.7991e-06  1.1531e-05  1.2736e-05     381381283.0
+
+# Idealised data-augmentation chain (exact x|lambda resample, R->inf)
+mu5        DA_gap(a=0.5)  DA_gap(a=1.9)  DA_gap(a=5)
+1.0        2.2713e-01     5.8451e-01     7.9403e-01
+0.1        2.3702e-01     6.0813e-01     8.1071e-01
+0.01       2.3787e-01     6.1168e-01     8.1302e-01
+0.001      2.3780e-01     6.1163e-01     8.1307e-01
+0.0001     2.3771e-01     6.1157e-01     8.1303e-01
+
+# Quadrature refinement check (alpha=1.9, mu5=0.01)
+n_q   max|piK-pi|   gap(K)
+6     1.12e-04     0.00094109
+10    1.96e-05     0.00094890
+16    3.82e-06     0.00095085
+24    1.02e-06     0.00095130
+-> gap(K) stable under refinement; not a discretisation artifact.
+
+# VERDICT
+HR (realistic, R=1) gap alpha=1.9: 3.444e-02 -> 9.799e-06  floors? False
+DA (ideal, R=inf)  gap alpha=1.9: 5.845e-01 -> 6.116e-01  floors? True
+PREDICTION 2 FAILED for the realistic Metropolis-within-Gibbs sampler: the
+joint-chain gap decays ~Theta(R*mu5)->0 for every fixed R and every alpha,
+tracking the Poisson collapse.  The idealised R->inf data-augmentation chain
+DOES floor, but exact fibre resampling is the intractable problem the sampler
+exists to avoid.  Theorem thm:loading-nb (Step-3 conductance decomposition)
+is not supported as stated.

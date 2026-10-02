@@ -1,0 +1,19 @@
+Extended-precision verification of the rim-only gaps (referee 2.8)
+======================================================================
+extended fibre |Fx| = 285 states, 4 lattice moves, bottleneck = centre cell
+
+      mu     gap (double)      gap (mpmath,60dp)  rel.agreement     lambda_min
+1e-2         5.206207e-04         0.000520620691       1.45e-13      -2.73e-61
+1e-3         5.303522e-05         5.303521743e-5       1.53e-14     -7.343e-62
+1e-6         5.314512e-08         5.314511917e-8        1.01e-8     -2.477e-61
+1e-8         5.314524e-10        5.314522828e-10        2.91e-7     -3.621e-61
+
+Conditioning and correctness (mu=1e-8, exact rational construction):
+  row-stochastic (exact):     True
+  max detailed-balance resid: 0.00e+00 (EXACT zero in rational arithmetic)
+  lambda_2               = 0.999999998937095434
+  lambda_min (>=0 => PSD)= -3.62125e-61
+  gap_block (mpmath)     = 1.06290456551e-9
+  gap_lazy  (mpmath)     = 5.31452282755e-10  (the tabulated rim-only gap)
+
+The gap is confirmed nonzero and matches the double-precision value: at mu=1e-8 the matrix is built in exact rational arithmetic (no construction roundoff) and diagonalised at 60 decimal digits, so the 5.3e-10 entry is a true spectral gap, not roundoff.

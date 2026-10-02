@@ -1,0 +1,22 @@
+======================================================================================================================
+Loading obstruction versus lattice basis: exact single-ray gaps on P1 (N=55), Poisson target, fifth-cell mean mu
+1500 random unimodular 4x4 bases per mu (seeded); 'selected' = recommend_basis on the target's exact free-coordinate law
+======================================================================================================================
+        mu              PLB         selected      best random   union(PLB,sel)     worst random   selector
+     1e+00         0.064797         0.092984         0.092595         0.128889        -0.000000   lll
+     3e-01         0.029319         0.092785         0.101662         0.106134        -0.000000   climb(lll)
+     1e-01         0.011591         0.136941         0.101932         0.092076        -0.000000   climb(lll)
+     3e-02         0.003737         0.145965         0.101468         0.089108        -0.000000   climb(lll)
+     1e-02         0.001274         0.148540         0.101286         0.088143        -0.000000   climb(lll)
+     3e-03         0.000385         0.149409         0.101218         0.087791        -0.000000   climb(lll)
+     1e-03         0.000129         0.149653         0.101198         0.087689        -0.000000   climb(lll)
+     1e-04         0.000013         0.149762         0.101189         0.087643        -0.000000   climb(lll)
+
+log-log slope of gap vs mu over mu <= 0.03 (1 = the Theta(mu) loading law):
+               PLB: 0.995
+          selected: -0.004
+       best random: 0.000
+    union(PLB,sel): 0.003
+      worst random: nan
+
+best random basis / PLB gap ratio by mu: 1.43, 3.47, 8.79, 27.15, 79.51, 262.72, 786.19, 7852.99

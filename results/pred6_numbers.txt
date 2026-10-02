@@ -1,0 +1,77 @@
+========================================================================
+STAGE 0: checker gates against Hazelton (2024) worked examples
+========================================================================
+  [PASS] E1 c0-Eulerian, not cr0
+  [PASS] E2 cr0-Eulerian
+  [PASS] E3 c0 but not cr0; some signing is cr0
+  [PASS] Ex.8 U reproduces printed matrix
+  [PASS] Ex.8 c0 witness at rows(1,2,3) x cols(1,2,4)
+  [PASS] Ex.8 admits a Thm-4.6 signing certificate
+  [PASS] Ex.9 U reproduces printed matrix (eq. 9)
+  [PASS] Ex.9 U passes the c0 check
+  [PASS] Ex.2 A is TU (paper, Ex.10 remark)
+  [PASS] near-pencil B balanced, not TU (det +-2)
+  all gates pass
+
+========================================================================
+STAGE 1: P4 (corridor grid, balanced not TU) and its PLB census
+========================================================================
+  A_P4: 7 links x 11 routes; balanced = True; TU = False (minor det -2 on rows [0, 1, 2, 3] x cols [7, 8, 9, 10])
+  partitions: 187 singular, 1 non-integral, 28 with |entries|>1,
+              12 {0,+-1} PLBs PASS the c0 check, 102 FAIL it
+  featured passing PLB: A1 columns (0, 1, 2, 3, 4, 5, 10) (mixed-sign top block)
+    sgn(U)=U balanced: True; c0-Eulerian submatrix: none (Thm~4.4 / thm:balanced certificate)
+    U^T rows (moves):
+      u1 = [1, 0, 0, 1, 0, 1, 1, 0, 0, 0, -1]
+      u2 = [-1, -1, -1, -1, 0, 0, 0, 1, 0, 0, 0]
+      u3 = [-1, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+      u4 = [-1, 0, -1, 0, -1, 0, 0, 0, 0, 1, 0]
+  featured failing PLB: A1 columns (0, 1, 2, 4, 5, 6, 7)
+    c0 witness rows [1, 7] x cols [0, 3]:
+      [1, 1]
+      [-1, -1]
+    Thm-4.6 signing certificate: sigma=[-1, 1, 1, 1]
+
+========================================================================
+STAGE 2: positive arm; passing PLB on P4 vs TU control (P1, Ex.9)
+========================================================================
+  P4, passing PLB, r-n = 4: fibres y = i*y0, y0 = [5, 3, 3, 3, 2, 2, 2]
+    i=1: |F|=  64 (dim 4), diameter=4, components=1, gap_unif=0.1292, gap_Pois(1)=0.0817
+    i=2: |F|= 486 (dim 4), diameter=4, components=1, gap_unif=0.1331, gap_Pois(1)=0.0679
+    i=3: |F|=1859 (dim 4), diameter=4, components=1, gap_unif=0.1341, gap_Pois(1)=0.0572
+  TU control: P1 (Hazelton Ex.2) with the augmenting Ex.9 PLB
+    i=1: |F|=  55, diameter=4, components=1, gap_unif=0.1198
+    i=2: |F|= 390, diameter=4, components=1, gap_unif=0.1216
+    i=3: |F|=1442, diameter=4, components=1, gap_unif=0.1220
+
+========================================================================
+STAGE 3: negative arm; Hazelton Ex.5 zig-zag on the failing Ex.8 PLB
+========================================================================
+  y=(1,M,M,1); x_M=(1,0,0,1,M,M,0,0) -> x'_M=(1,0,0,1,0,0,0,M);
+  Ex.5: shortest walk with the Ex.8 PLB has length 3M (repeats -u2-u1+u4 M times)
+    M=1: |F|=   6 | Ex.8 PLB: dist(x_M,x'_M)=3 (3M=3), diam=5, gap=0.03349 | Ex.9 PLB: diam=3, gap=0.0955
+    M=2: |F|=  10 | Ex.8 PLB: dist(x_M,x'_M)=6 (3M=6), diam=8, gap=0.01508 | Ex.9 PLB: diam=3, gap=0.1057
+    M=3: |F|=  14 | Ex.8 PLB: dist(x_M,x'_M)=9 (3M=9), diam=11, gap=0.00807 | Ex.9 PLB: diam=3, gap=0.1106
+    M=4: |F|=  18 | Ex.8 PLB: dist(x_M,x'_M)=12 (3M=12), diam=14, gap=0.00497 | Ex.9 PLB: diam=3, gap=0.1136
+    M=6: |F|=  26 | Ex.8 PLB: dist(x_M,x'_M)=18 (3M=18), diam=20, gap=0.00241 | Ex.9 PLB: diam=3, gap=0.1169
+    M=8: |F|=  34 | Ex.8 PLB: dist(x_M,x'_M)=24 (3M=24), diam=26, gap=0.00142 | Ex.9 PLB: diam=3, gap=0.1187
+  thin fibre y=(0,1,1,0), |F|=2: Ex.8 PLB components=2 (named pair disconnected: True); Ex.9 PLB components=1
+
+========================================================================
+STAGE 4: necessity probe; do failing PLBs on the balanced P4 actually fail?
+========================================================================
+  fibre menu: 30 distinct full-dimensional fibres, sizes 11-214
+  of 102 failing PLBs: 102 exhibit an augmentation failure on the menu
+  (diameter > r-n or disconnection); 102 carry a Thm-4.6 signing certificate;
+  0 have neither: (none)
+  all 12 passing PLBs stay augmenting (diam <= 4, connected) on the menu: True
+
+========================================================================
+VERDICT (Prediction 6)
+========================================================================
+  positive arm: on balanced-not-TU P4 the c0-certified PLB keeps diameter <= 4
+    on all scaled fibres, connected, uniform gap 0.1292-0.1341 (TU control ['0.1198', '0.1216', '0.1220']) -> HELD
+  negative arm: failing PLB walks 3M (zig-zag) with gap collapsing 0.0335 -> 0.00142;
+    same fibres under the augmenting PLB: diameter <= 4, gap flat 0.095-0.119 -> HELD
+  necessity probe: 102/102 failing PLBs exhibit real failures on the fibre menu; 102 carry Thm-4.6 certificates; unresolved: 0
+  PREDICTION 6: HELD

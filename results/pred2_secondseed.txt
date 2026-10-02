@@ -1,0 +1,22 @@
+# Second-seed stability of MC-assembled operators (alpha=1.9, mu=1e-3)
+
+## P1 (fibre 55)
+  q-exponent  gap(K_R) ~ R^q, R in [1,2,4,8]:
+    seed=3 (ref): q=1.054   gaps=['8.236e-05', '1.713e-04', '3.569e-04', '7.364e-04']
+    seed=1 (2nd): q=1.084   gaps=['7.402e-05', '1.575e-04', '3.357e-04', '7.046e-04']
+    |dq| = 0.030  (2.9% of q)
+  exact-resample floor 1-slem(K_inf):
+    seed=0 (ref): floor=0.6116
+    seed=1 (2nd): floor=0.6118
+    |dfloor|/floor = 0.0%
+
+## 2x3 (fibre 10)
+  q-exponent  gap(K_R) ~ R^q, R in [1,2,4,8]:
+    seed=3 (ref): q=0.990   gaps=['1.539e-03', '3.070e-03', '6.103e-03', '1.206e-02']
+    seed=1 (2nd): q=0.992   gaps=['1.458e-03', '2.909e-03', '5.790e-03', '1.146e-02']
+    |dq| = 0.002  (0.2% of q)
+  exact-resample floor 1-slem(K_inf):
+    seed=0 (ref): floor=0.7016
+    seed=1 (2nd): floor=0.6997
+    |dfloor|/floor = 0.3%
+

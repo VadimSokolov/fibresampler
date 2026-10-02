@@ -1,0 +1,26 @@
+# Prediction 2 generality probe: Theta(R*mu) obstruction across problems
+
+
+## Problem: P1 (Hazelton Ex.2/Ex.11)   (fibre 55, shrink coord 4, alpha=1.9)
+  mu sweep [0.1, 0.01, 0.001]
+  SR-Pois gap:      ['1.159e-02', '1.274e-03', '1.287e-04']   slope p=0.98
+  SR-NB gap (R=1):  ['7.839e-03', '9.508e-04', '9.771e-05']   slope p=0.95   (obstruction if p~1)
+  gap(K_R) at mu=0.001: R=[1, 2, 4, 8] -> ['8.236e-05', '1.713e-04', '3.569e-04', '7.364e-04']   slope q=1.05   (linear-in-R if q~1)
+  DA (R->inf) gap:  ['6.081e-01', '6.117e-01', '6.116e-01']   floors? True
+
+## Problem: 2x3 table (generality check)   (fibre 10, shrink coord 0, alpha=1.9)
+  mu sweep [0.1, 0.01, 0.001]
+  SR-Pois gap:      ['1.922e-01', '3.460e-02', '3.719e-03']   slope p=0.86
+  SR-NB gap (R=1):  ['8.267e-02', '1.387e-02', '1.525e-03']   slope p=0.87   (obstruction if p~1)
+  gap(K_R) at mu=0.001: R=[1, 2, 4, 8] -> ['1.539e-03', '3.070e-03', '6.103e-03', '1.206e-02']   slope q=0.99   (linear-in-R if q~1)
+  DA (R->inf) gap:  ['6.320e-01', '6.951e-01', '7.016e-01']   floors? True
+
+# CONCLUSION
+  P1: SR-NB gap slope p=0.95 (mu), K_R slope q=1.05 (R), DA floors=True
+  2x3: SR-NB gap slope p=0.87 (mu), K_R slope q=0.99 (R), DA floors=True
+
+  p~1 on both problems: True;  q~1 on both: True;  DA floors on both: True
+  => GENERAL OBSTRUCTION confirmed: for any FIXED R, the joint-chain gap of
+     an augmented hit-and-run sampler vanishes as Theta(R*mu) -> 0 (the gamma
+     latent tracks the shrinking marginal mean); only the intractable R->inf
+     exact-resample chain floors.  The Prediction-2 negative is not P1-specific.

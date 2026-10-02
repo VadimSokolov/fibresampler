@@ -1,0 +1,135 @@
+==========================================================================
+TASK G -- Gaussian-relaxation independence sampler as a teleporter
+alpha = 1.9, seed = 20260701, QMC = 8 x 2^11 scrambled Sobol
+==========================================================================
+
+GATES
+  G0 SOV vs scipy mvn (P1 (Hazelton Ex.2/Ex.11), mu_b=1): max rel diff 1.66e-03  PASS
+  G0 SOV vs scipy mvn (2x3 table (generality check), mu_b=1): max rel diff 1.23e-06  PASS
+  G1 detailed balance (P1, mu_b=0.1): max |piK - (piK)'| = 8.67e-19  PASS
+  G2 sum_F q = 1.000000000000000  (pre-renorm feasible mass 0.7262, rejection rate 0.2738)  PASS
+  G1 detailed balance (table, mu_b=0.1): max |piK - (piK)'| = 1.39e-17  PASS
+  G2 sum_F q = 1.000000000000000  (pre-renorm feasible mass 0.8922, rejection rate 0.1078)  PASS
+  G4 consistency limit (P1): gap=0.4123  w*=0.4123  feasible mass=0.078  mean acc=0.722  PASS (O(1), no collapse)
+  G4 consistency limit (table): gap=0.5648  w*=0.5648  feasible mass=0.649  mean acc=0.705  PASS (O(1), no collapse)
+
+==========================================================================
+P-G1 (slope) and P-G2 (Liu identity), mu sweep, alpha = 1.9
+==========================================================================
+
+P1 (fibre 55, free dim 4), shrinking mu5:
+        mu   gap(eigen)     log10 w*   |gap-w*|   feas      acc  x*_b  argmin state x*
+         1   1.2183e-01      -0.9142    5.6e-16  0.608 6.60e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+       0.1   1.6753e-03       -2.776    1.0e-16  0.726 6.58e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+      0.01       <1e-13       -21.96    6.7e-16  0.774 6.96e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+     0.001       <1e-13       -216.9    8.9e-16  0.793 7.11e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+    0.0001       <1e-13        -2171    4.4e-16  0.800 7.17e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+     1e-06       <1e-13   -2.172e+05    6.7e-16  0.802 7.19e-01     2  (0, 3, 0, 1, 2, 1, 1, 0)
+     1e-08       <1e-13   -2.172e+07    2.2e-16  0.803 7.19e-01     2  (2, 0, 0, 0, 2, 4, 2, 0)
+     1e-12       <1e-13   -2.172e+11    8.9e-16  0.803 7.19e-01     2  (0, 2, 0, 0, 2, 2, 2, 0)
+     1e-16       <1e-13   -2.355e+15    4.4e-16  0.803 7.19e-01     2  (3, 1, 0, 2, 2, 3, 0, 0) [thin: jittered]
+  local slopes d(log w*)/d(log mu):
+           1 ->      0.1: +1.862
+         0.1 ->     0.01: +19.19
+        0.01 ->    0.001: +195
+       0.001 ->   0.0001: +1954
+      0.0001 ->    1e-06: +1.075e+05
+       1e-06 ->    1e-08: +1.075e+07
+       1e-08 ->    1e-12: +5.428e+10
+       1e-12 ->    1e-16: +5.886e+14
+  Liu identity (G3), worst rel |gap-w*| where w*>=1e-9: 6.02e-14
+
+2x3 table (fibre 10, free dim 2), shrinking delta on coord 0:
+        mu   gap(eigen)     log10 w*   |gap-w*|   feas      acc  x*_b  argmin state x*
+         1   4.2667e-01      -0.3699    1.7e-16  0.956 7.50e-01     3  (3, 0, 1, 0, 3, 1)
+       0.1   1.9514e-07        -6.71    5.0e-17  0.892 7.70e-01     3  (3, 0, 1, 0, 3, 1)
+      0.01       <1e-13       -83.35    4.4e-16  0.856 8.67e-01     3  (3, 0, 1, 0, 3, 1)
+     0.001       <1e-13       -863.6    2.2e-16  0.860 8.86e-01     3  (3, 0, 1, 0, 3, 1)
+    0.0001       <1e-13        -8679    0.0e+00  0.864 8.94e-01     3  (3, 0, 1, 0, 3, 1)
+     1e-06       <1e-13   -8.686e+05    0.0e+00  0.866 8.98e-01     3  (3, 0, 1, 0, 3, 1)
+     1e-08       <1e-13   -8.686e+07    0.0e+00  0.866 8.98e-01     3  (3, 1, 0, 0, 2, 2)
+     1e-12       <1e-13   -8.685e+11    0.0e+00  0.866 8.98e-01     3  (3, 1, 0, 0, 2, 2)
+     1e-16       <1e-13   -1.074e+16    0.0e+00  0.866 8.98e-01     3  (3, 1, 0, 0, 2, 2)
+  local slopes d(log w*)/d(log mu):
+           1 ->      0.1: +6.34
+         0.1 ->     0.01: +76.64
+        0.01 ->    0.001: +780.2
+       0.001 ->   0.0001: +7816
+      0.0001 ->    1e-06: +4.3e+05
+       1e-06 ->    1e-08: +4.3e+07
+       1e-08 ->    1e-12: +2.171e+11
+       1e-12 ->    1e-16: +2.684e+15
+  Liu identity (G3), worst rel |gap-w*| where w*>=1e-9: 2.55e-10
+
+==========================================================================
+P-G3 -- dispersion mismatch: alpha sweeps
+==========================================================================
+(a) benign mean mu_b = 1: isolates the dispersion mismatch (the mean-scale
+    collapse of P-G1 is switched off).
+  P1, mu_b = 1:
+    alpha     log10 w*           w*      acc  x*_b  argmin x*
+      1.9      -0.9142    1.218e-01 6.60e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+        1      -0.9203    1.201e-01 5.70e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+      0.5      -0.9386    1.152e-01 4.28e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+     0.25       -1.026    9.417e-02 2.70e-01     0  (0, 0, 2, 0, 0, 2, 2, 0)
+      0.1        -1.14    7.247e-02 1.29e-01     0  (0, 0, 2, 0, 0, 2, 2, 0)
+  w* monotone decreasing as alpha decreases: True
+  table, mu_b = 1:
+    alpha     log10 w*           w*      acc  x*_b  argmin x*
+      1.9      -0.3699    4.267e-01 7.50e-01     3  (3, 0, 1, 0, 3, 1)
+        1      -0.3952    4.025e-01 6.65e-01     0  (0, 3, 1, 3, 0, 1)
+      0.5      -0.3948    4.029e-01 5.84e-01     0  (0, 3, 1, 3, 0, 1)
+     0.25      -0.3721    4.245e-01 5.45e-01     0  (0, 3, 1, 3, 0, 1)
+      0.1      -0.3385    4.586e-01 5.41e-01     0  (0, 3, 1, 3, 0, 1)
+  w* monotone decreasing as alpha decreases: False
+(b) collapsed mean mu_b = 1e-2: the mean-scale mismatch dominates w*;
+    dispersion mismatch shows in the mean acceptance instead.
+  P1, mu_b = 0.01:
+    alpha     log10 w*           w*      acc  x*_b  argmin x*
+      1.9       -21.96    1.087e-22 6.96e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+        1       -22.03    9.423e-23 6.13e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+      0.5       -22.08    8.306e-23 4.74e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+     0.25       -22.01    9.711e-23 3.18e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+      0.1       -21.39    4.071e-22 1.81e-01     2  (0, 4, 0, 2, 2, 0, 0, 0)
+  w* monotone decreasing as alpha decreases: False
+  table, mu_b = 0.01:
+    alpha     log10 w*           w*      acc  x*_b  argmin x*
+      1.9       -83.35    4.457e-84 8.67e-01     3  (3, 0, 1, 0, 3, 1)
+        1       -83.47    3.370e-84 8.62e-01     3  (3, 0, 1, 0, 3, 1)
+      0.5       -83.34    4.571e-84 8.64e-01     3  (3, 0, 1, 0, 3, 1)
+     0.25        -82.5    3.155e-83 8.68e-01     3  (3, 0, 1, 0, 3, 1)
+      0.1       -79.03    9.368e-80 8.59e-01     3  (3, 0, 1, 0, 3, 1)
+  w* monotone decreasing as alpha decreases: False
+
+==========================================================================
+P-G4 -- floor comparison at the deep end (mu_b = 1e-16)
+==========================================================================
+  sampler                          P1 floor    table floor  work per sweep
+  Gaussian-IMH                         none           none  1 (r-n)-dim draw + 1 solve + 2 cell masses; gap -> 0 super-polynomially
+    (log10 gap at 1e-16)          -2.35e+15      -1.07e+16  (thin-direction jitter floor: values are upper bounds)
+  3-rung tempering [1,.5,0]         0.00939        0.01206  3 ray draws + 1 swap per sweep
+  DA (R->inf), Pred 2                0.6116         0.7016  exact x|lambda resample (intractable; R latent draws to approximate)
+
+==========================================================================
+VERDICTS
+==========================================================================
+  P-G1 small-mu slope: P1 +5.89e+14, table +2.68e+15 (bar |slope| <= 0.1): FAILED
+       slope is not ~0 and not ~1: |slope| grows without bound as mu
+       shrinks (super-polynomial collapse).  Mechanism: the ridge pins the
+       bottleneck coordinate, the matched Gaussian has sd ~ sqrt(mu) there,
+       so the unit cell one step up the lobe costs exp(-1/(2mu)) under q
+       but only Theta(mu) under pi_NB: q starves exactly the lobe states
+       the teleporter exists to reach.  w* = min q/pi -> 0 faster than any
+       power of mu; the argmin state's ratio is strongly mu-dependent.
+  P-G2 Liu identity gap = w*: worst rel dev P1 6.02e-14, table 2.55e-10: VERIFIED
+  P-G3 w* decreases as alpha decreases at benign mean (mu_b=1): P1 True, table False: FAILED
+       at collapsed mean (mu_b=1e-2) w* is annihilated by the mean-scale
+       mismatch and is ~flat in alpha (P1 False, table False); the dispersion mismatch appears as falling mean acceptance instead.
+  P-G4: Gaussian-IMH has NO floor (contrast: tempering ~1e-2, DA ~0.6-0.7);
+        see table above.
+
+  Theory note (rem:dichotomy): the argmin ratio scales with mu, so the
+  rounded moment-matched Gaussian is NOT a Doeblin teleporter: independence
+  proposals teleport only if q dominates pi uniformly on the fibre
+  (w* bounded away from 0 in mu).  Tail domination is the missing condition;
+  a light-tailed relaxation of a shrinking-mean count target cannot satisfy it.

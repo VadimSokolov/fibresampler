@@ -1,0 +1,5 @@
+corridor-height check: pairwise k(i,j) = min over paths of max x_{j*}; k* = max over pairs
+======================================================================
+P1 road network: fibre=55, lobes=3, pairwise k(i,j) matrix = [[0, 1, 1], [1, 0, 1], [1, 1, 0]], k* = 1; drain: stuck=0, d_B=2
+2x3 table: fibre=10, lobes=2, pairwise k(i,j) matrix = [[0, 1], [1, 0]], k* = 1; drain: stuck=0, d_B=2
+k*=1 on BOTH problems (all pairs) and border drains with no stuck states: the height-one linkage and drain hypotheses of prop:loading-obstruction and the k*=1 specialisation of thm:spectrum are verified directly

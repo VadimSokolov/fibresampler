@@ -1,0 +1,21 @@
+Referee 2.7: corridor height k*=2, spectral verification of cor:slice and thm:spectrum
+==============================================================================
+A shape=(2, 4), |fibre|=6, moves=2, bottleneck jstar=0
+margins y=[4, 5]; cols1=[0, 1]
+lobes (ground stratum x_jstar=0)=2, pairwise peak matrix=[[0, 2], [2, 0]], k* = 2  (GATE OK)
+
+        mu        slice     SR(base)  temper b=1/2   temper b=0
+       0.1   4.6797e-03   8.1586e-03    1.4613e-02   3.4238e-02
+      0.01   5.5823e-05   9.7872e-05    1.7057e-03   2.1307e-02
+     0.001   5.7007e-07   9.9784e-07    1.8096e-04   1.8274e-02
+    0.0001   5.7129e-09   9.9978e-09    1.8433e-05   1.7341e-02
+     1e-06   5.7132e-13   9.9987e-13    1.8575e-07   1.6948e-02
+
+log-log slopes:  slice=+1.986  SR(base)=+1.986  b=1/2=+0.982  b=0=+0.053
+
+cor:slice  (slice gap Theta(mu^k*)):   slope +1.986 vs k*=2  HELD
+thm:spectrum b=1 (SR base, k* b_min=2): slope +1.986 vs 2  HELD
+thm:spectrum b=1/2 (k* b_min=1):        slope +0.982 vs 1  HELD
+thm:spectrum b=0 (uniform rung, escape): floor 1.695e-02, slope +0.053 vs 0  HELD
+
+VERDICT: at k*=2 the slice and untempered exponents are 2 (not 1), the beta=1/2 rung softens the exponent to k* beta_min = 1, and the uniform rung floors the gap: cor:slice and thm:spectrum hold at exponent 2, the regime the k*=1 registered examples cannot exhibit.

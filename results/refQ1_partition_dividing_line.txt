@@ -1,0 +1,74 @@
+================================================================================================================
+Loading obstruction versus the PARTITION: every integral PLB (|det A_1| = 1), exact single-ray gaps
+j* = the cell whose Poisson mean mu shrinks (others 1); free = j* in the free block; hold = PLB columns with u_{j*} = 0
+================================================================================================================
+
+P1 (8 routes, 4 links; cell 5): 40 integral PLBs
+     A_1 columns    j*  hold/m lobes  irr  aug drain  gap(mu=1e-6)   slope
+    (1, 2, 3, 4)  free   3/4       1    y    n     y     1.498e-01  -0.004
+    (1, 2, 3, 7)  free   3/4       1    y    n     y     1.498e-01  -0.004
+    (1, 2, 4, 8)  free   3/4       1    y    n     y     1.498e-01  -0.002
+    (1, 2, 7, 8)  free   3/4       1    y    n     y     1.498e-01  -0.002
+    (1, 3, 4, 6)  free   3/4       1    y    n     y     1.197e-01  -0.005
+    (1, 3, 6, 7)  free   3/4       1    y    n     y     1.197e-01  -0.005
+    (1, 4, 6, 8)  free   3/4       1    y    y     y     1.498e-01  -0.008
+    (1, 6, 7, 8)  free   3/4       1    y    y     y     1.498e-01  -0.008
+    (2, 3, 4, 6)  free   3/4       1    y    n     y     1.012e-01   0.000
+    (2, 3, 4, 7)  free   3/4       1    y    n     y     1.012e-01  -0.000
+    (2, 3, 4, 8)  free   3/4       1    n    n     n     0.000e+00     nan
+    (2, 3, 6, 7)  free   3/4       1    y    n     y     1.012e-01   0.000
+    (2, 3, 7, 8)  free   3/4       1    n    n     n     0.000e+00     nan
+    (2, 4, 6, 8)  free   3/4       1    y    n     y     1.012e-01   0.000
+    (2, 4, 7, 8)  free   3/4       1    y    n     y     1.012e-01  -0.002
+    (2, 6, 7, 8)  free   3/4       1    y    n     y     1.012e-01   0.000
+    (3, 4, 6, 7)  free   3/4       1    y    n     y     1.012e-01  -0.001
+    (3, 4, 6, 8)  free   3/4       1    n    n     n     0.000e+00     nan
+    (3, 6, 7, 8)  free   3/4       1    n    n     n     0.000e+00     nan
+    (4, 6, 7, 8)  free   3/4       1    y    n     y     1.012e-01  -0.000
+    (1, 2, 4, 5) pivot   2/4       3    y    n     y     1.757e-07   0.996
+    (1, 2, 5, 7) pivot   2/4       3    y    n     y     1.757e-07   0.996
+    (1, 3, 4, 5) pivot   2/4       3    y    n     y     1.119e-07   0.997
+    (1, 3, 5, 7) pivot   2/4       3    y    n     y     1.119e-07   0.997
+    (1, 4, 5, 6) pivot   2/4       3    y    y     y     1.289e-07   0.998
+    (1, 4, 5, 8) pivot   2/4       3    y    n     y     1.589e-07   0.995
+    (1, 5, 6, 7) pivot   2/4       3    y    y     y     1.289e-07   0.998
+    (1, 5, 7, 8) pivot   2/4       3    y    n     y     1.589e-07   0.995
+    (2, 4, 5, 6) pivot   2/4       3    y    n     y     1.682e-07   0.997
+    (2, 4, 5, 7) pivot   2/4       3    y    n     y     1.467e-07   0.996
+    (2, 4, 5, 8) pivot   0/4      23    y    n     y     9.935e-08   0.999
+    (2, 5, 6, 7) pivot   2/4       3    y    n     y     1.682e-07   0.997
+    (2, 5, 7, 8) pivot   0/4      23    y    n     y     9.935e-08   0.999
+    (3, 4, 5, 6) pivot   0/4      23    y    n     y     6.809e-08   0.999
+    (3, 4, 5, 7) pivot   2/4       3    y    n     y     1.375e-07   0.995
+    (3, 4, 5, 8) pivot   2/4       3    y    n     y     1.589e-07   0.997
+    (3, 5, 6, 7) pivot   0/4      23    y    n     y     6.809e-08   0.999
+    (3, 5, 7, 8) pivot   2/4       3    y    n     y     1.589e-07   0.997
+    (4, 5, 6, 7) pivot   2/4       3    y    n     y     1.508e-07   0.996
+    (4, 5, 7, 8) pivot   2/4       3    y    n     y     1.248e-07   0.995
+  pivot (irreducible): n=20, slope 0.995 to 0.999, lobes 3 to 23; free (irreducible): n=16, slope -0.008 to 0.000, lobes 1 to 1
+  free partitions that are exactly augmenting: 2 of 16
+  K = 1 : n=16, slope -0.008 to 0.000, gap(1e-6) 1.01e-01 to 1.50e-01, border drained on all: True
+  K >= 2: n=20, slope 0.995 to 0.999, gap(1e-6) 6.81e-08 to 1.76e-07, border drained on all: True
+  reducible PLBs (gap exactly 0 at every mu, not admissible samplers): 4
+
+2x3 table (4,4|3,3,2); cell x11: 12 integral PLBs
+     A_1 columns    j*  hold/m lobes  irr  aug drain  gap(mu=1e-6)   slope
+    (2, 3, 4, 5)  free   1/2       1    y    n     y     3.419e-01  -0.005
+    (2, 3, 4, 6)  free   1/2       1    y    n     y     2.261e-01  -0.003
+    (2, 4, 5, 6)  free   1/2       1    y    n     y     3.419e-01  -0.005
+    (3, 4, 5, 6)  free   1/2       1    y    n     y     2.261e-01  -0.003
+    (1, 2, 3, 4) pivot   0/2       2    y    n     y     3.750e-06   0.984
+    (1, 2, 3, 5) pivot   1/2       1    y    n     y     3.419e-01  -0.005
+    (1, 2, 3, 6) pivot   1/2       1    y    n     y     2.261e-01  -0.003
+    (1, 2, 4, 6) pivot   0/2       2    y    n     y     3.750e-06   0.984
+    (1, 2, 5, 6) pivot   1/2       1    y    n     y     3.419e-01  -0.005
+    (1, 3, 4, 5) pivot   0/2       2    y    n     y     3.750e-06   0.984
+    (1, 3, 5, 6) pivot   1/2       1    y    n     y     2.261e-01  -0.003
+    (1, 4, 5, 6) pivot   0/2       2    y    n     y     3.750e-06   0.984
+  pivot (irreducible): n=8, slope -0.005 to 0.984, lobes 1 to 2; free (irreducible): n=4, slope -0.005 to -0.003, lobes 1 to 1
+  free partitions that are exactly augmenting: 0 of 4
+  K = 1 : n=8, slope -0.005 to -0.003, gap(1e-6) 2.26e-01 to 3.42e-01, border drained on all: True
+  K >= 2: n=4, slope 0.984 to 0.984, gap(1e-6) 3.75e-06 to 3.75e-06, border drained on all: True
+  reducible PLBs (gap exactly 0 at every mu, not admissible samplers): 0
+
+BOTH FIBRES: 52 integral PLBs, 48 irreducible; dividing line: K = 1 on 24 (slope -0.008 to 0.000), K >= 2 on 24 (slope 0.984 to 0.999); every irreducible K = 1 partition drains: True
