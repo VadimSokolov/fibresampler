@@ -2,7 +2,7 @@
 
 All commands run from the repository root. Times are wall clock on a single core of an Apple M2 laptop unless a cluster is named.
 
-Every script writes its numbers to a file in `results/`, and those files are tracked. After a re-run, `git diff results/` shows exactly what changed. What to expect:
+Every script writes its numbers to a file in `results/`, and those files are tracked. After a re-run, `git diff results/` shows exactly what changed. The ledger `results/numbers.txt` records the values quoted in the papers, one line per value (value, script, output identifier, date) with free-text blocks for the larger benchmark runs: look a number up there to find the script behind it. What to expect:
 
 - Exact quantities (gaps, slopes, lobe counts, loadings) reproduce to the printed digits on any machine. Three things can still differ in the last digit or in a label: a gap that is exactly zero prints as noise of order `1e-16` (for example `5.551e-16` against `2.220e-16` on a reducible chain), a slope fitted to numerically zero gaps is reported as `nan`, and when two candidate bases tie in the selector's surrogate score the label of the winner (`lll` or `climb(I)`) can depend on the BLAS build, while the gap does not.
 - Monte Carlo quantities (chain ESS, and the pilot replicates in `refQ2_tempering_tuning.py`) reproduce up to Monte Carlo error for the same seeds, and exactly on the same machine and library versions: a different numpy release can change the random streams, which moves these summaries in the last digits, while the exact gaps beside them do not move.

@@ -1,0 +1,448 @@
+# value               script                          output-id                         date
+# --- Prediction 1 (positive control, P1) ---
+55                    experiments/pred1_control.py    fibre_size:P1                     2026-07-01
+0.119828              experiments/pred1_control.py    uniform_gap:P1                    2026-07-01
+4.0926                experiments/pred1_control.py    uniform_rho:P1                    2026-07-01
+0.064797              experiments/pred1_control.py    gap:theta5=1                      2026-07-01
+202.306               experiments/pred1_control.py    rho:theta5=1                      2026-07-01
+0.011591              experiments/pred1_control.py    gap:theta5=0.1                    2026-07-01
+14536.175             experiments/pred1_control.py    rho:theta5=0.1                    2026-07-01
+0.0012739             experiments/pred1_control.py    gap:theta5=0.01                   2026-07-01
+1423381.781           experiments/pred1_control.py    rho:theta5=0.01                   2026-07-01
+0.750000              experiments/pred1_control.py    ex6_uniform_slem                  2026-07-01
+# --- Prediction 2 (keystone, NEGATIVE, P1) ---
+0.034436              experiments/pred2_keystone.py   NB_gap:alpha=1.9,mu5=1            2026-07-01
+0.00095085            experiments/pred2_keystone.py   NB_gap:alpha=1.9,mu5=0.01         2026-07-01
+9.7991e-06            experiments/pred2_keystone.py   NB_gap:alpha=1.9,mu5=1e-4         2026-07-01
+0.61168               experiments/pred2_keystone.py   DA_gap:alpha=1.9,mu5=0.01         2026-07-01
+0.61157               experiments/pred2_keystone.py   DA_gap:alpha=1.9,mu5=1e-4         2026-07-01
+3.81e08               experiments/pred2_keystone.py   NB_rho:alpha=1.9,mu5=1e-4         2026-07-01
+# --- Prediction 2 generality (2nd problem: 2x3 table) ---
+0.95                  experiments/pred2_generality.py NB_gap_mu_slope:P1               2026-07-01
+1.05                  experiments/pred2_generality.py KR_gap_R_slope:P1                2026-07-01
+0.87                  experiments/pred2_generality.py NB_gap_mu_slope:2x3              2026-07-01
+0.99                  experiments/pred2_generality.py KR_gap_R_slope:2x3               2026-07-01
+0.7016                experiments/pred2_generality.py DA_gap_floor:2x3,mu=1e-3         2026-07-01
+0.082670              experiments/pred2_generality.py NB_gap:2x3,alpha=1.9,mu=0.1      2026-07-01
+0.0015250             experiments/pred2_generality.py NB_gap:2x3,alpha=1.9,mu=1e-3     2026-07-01
+# --- Assumption A (two-lobe) verification on evidence problems ---
+3                     experiments/verify_assumption_lobes.py  P1_lobe_components         2026-07-01
+2                     experiments/verify_assumption_lobes.py  table_lobe_components      2026-07-01
+0.241                 experiments/verify_assumption_lobes.py  P1_2nd_lobe_massfrac       2026-07-01
+0.400                 experiments/verify_assumption_lobes.py  table_2nd_lobe_massfrac    2026-07-01
+# --- Prediction 3 (geometry): reflection benefit scales with axis defect kappa ---
+# (regenerated reproducibly by experiments/pred3_bands.py -> results/pred3_bands.txt;
+#  uniform target; baseline Gibbs SR; reflective best over B_max in {2,4})
+0.119828              experiments/pred1_control.py            P1_uniform_gibbsSR_gap     2026-07-01
+0.0325                experiments/pred3_bands.py              tiltband_kappa4.26_gibbsSR 2026-07-01
+0.1254                experiments/pred3_bands.py              tiltband_kappa4.26_ref_B2  2026-07-01
+0.0070                experiments/pred3_bands.py              tiltband_kappa10.6_gibbsSR 2026-07-01
+0.0737                experiments/pred3_bands.py              tiltband_kappa10.6_ref_B4  2026-07-01
+# --- Prediction 3 ratio pairs quoted in Sec 9.4 (best-B over {2,4} vs Gibbs SR) ---
+1.1                   experiments/pred3_bands.py  ref_over_sr:kappa=2.15 (B2)       2026-07-01
+3.9                   experiments/pred3_bands.py  ref_over_sr:kappa=4.26 (B2; 3.86 in pred3_bands.txt, was misrounded 3.8 here until r4) 2026-07-02
+7.3                   experiments/pred3_bands.py  ref_over_sr:kappa=7.08 (B4)       2026-07-01
+10.6                  experiments/pred3_bands.py  ref_over_sr:kappa=10.6 (B4; 10.57 in pred3_bands.txt, was misrounded 10.5 here until r4) 2026-07-02
+# --- FMB reference (4ti2 minimal Markov basis; results/fmb_reference.txt) ---
+1.000                 experiments/fmb_reference.py  P1_FMB_over_PLB_gap_all_theta5    2026-07-01
+0.356391              experiments/fmb_reference.py  table_FMB_gap:mu=0.01             2026-07-01
+0.034601              experiments/fmb_reference.py  table_PLB_gap:mu=0.01             2026-07-01
+1                     experiments/fmb_reference.py  table_FMB_lobe_components         2026-07-01
+# --- Prediction 4 (crossover, band x table product; pred4_numbers.txt) ---
+2.025                 experiments/pred4_crossover.py  plateau:kappa=4.257,mu=1          2026-07-01
+2.754                 experiments/pred4_crossover.py  plateau:kappa=5.668,mu=1          2026-07-01
+0.815                 experiments/pred4_crossover.py  floor:both_kappa,mu=0.01          2026-07-01
+# (manuscript rounds: 2.0, 2.8, 0.82 at kappa 4.3/5.7)
+# --- Prediction 5 (ESS/time grid; pred5_numbers.txt) ---
+72455                 experiments/pred5_ess.py        ESSiter:Ref-Pois,mu=1             2026-07-01
+70181                 experiments/pred5_ess.py        ESSiter:Ref-NB,mu=1               2026-07-01
+34821                 experiments/pred5_ess.py        ESSiter:SR-NB,mu=1                2026-07-01
+34101                 experiments/pred5_ess.py        ESSiter:SR-Pois,mu=1              2026-07-01
+2.07                  experiments/pred5_ess.py        refpair_over_srpair:mu=1 (derived)          2026-07-01
+1.12                  experiments/pred5_ess.py        exact_gap_ratio_vs_gibbs:mu=1 (derived)     2026-07-01
+0.447                 experiments/pred5_ess.py        ref_over_sr_gap:mu=0.01           2026-07-01
+2.5-3.8x              experiments/pred5_ess.py        refstep_cost_vs_ray (us/step)     2026-07-01
+0.281,0.12,0.052,0.026 experiments/pred5_ess.py       collapse:SRp,Refp,SRnb,Refnb      2026-07-01
+# --- Prediction 6 (balanced extension; pred6_numbers.txt, Hopper 8800326) ---
+4                     experiments/pred6_balanced.py   certified_PLB_diameter (=r-n)     2026-07-01
+0.1292-0.1341         experiments/pred6_balanced.py   gap_unif:P4 passing,3 scales      2026-07-01
+0.1198-0.1220         experiments/pred6_balanced.py   gap_unif:TU control,3 scales      2026-07-01
+102                   experiments/pred6_balanced.py   failing_PLBs (all fail, certified) 2026-07-01
+12                    experiments/pred6_balanced.py   passing_PLBs (none fail)          2026-07-01
+0.03349,0.00142       experiments/pred6_balanced.py   ex5_zigzag_gap:M=1,M=8 (walk 3M=24; label said M=24 until r4) 2026-07-02
+# --- Prediction 7 (high-probability augmentation; pred7_numbers*.txt) ---
+0.889                 experiments/pred7_hp.py         max_fail_frac:(6,16),s~0.23       2026-07-01
+0.467                 experiments/pred7_hp.py         max_fail_frac:(10,40),s~0.18      2026-07-01
+0.20                  experiments/pred7_hp.py         density_floor:(6,16)              2026-07-01
+0.15                  experiments/pred7_hp.py         density_floor:(10,40)             2026-07-01
+# --- Tasks V/S (tempering spectrum law; taskV_hardening_numbers.txt) ---
+0.050,0.264,0.519,0.766,1.000  experiments/taskV_hardening.py  exponent:beta_min=0,.25,.5,.75,1 (tab:spectrum) 2026-07-01
+1                     experiments/taskV_hardening.py  kstar_observed:P1                 2026-07-01
++0.996                experiments/taskS_slice.py      slice_gap_slope (conserved)       2026-07-01
+# --- Corridor-height check (theorem hypothesis; kstar_check.txt) ---
+1                     experiments/kstar_check.py      kstar:P1 (3 lobes, pairwise all 1) 2026-07-01
+1                     experiments/kstar_check.py      kstar:table (2 lobes, pairwise all 1) 2026-07-01
+2                     experiments/kstar_check.py      drain_dB:P1 (stuck=0)             2026-07-01
+2                     experiments/kstar_check.py      drain_dB:table (stuck=0)          2026-07-01
+# --- Section 7 probes (empirical.md Exp 5.3) ---
+33921                 probe A (empirical.md 5.3)      balanced c0-Eulerian signings     2026-07-01
+102                   probe B (empirical.md 5.3)      P4 failing PLBs w/ deg-2 witness  2026-07-01
+2155                  probe C (empirical.md 5.3)      heavy-row candidates w/ sub-witness 2026-07-01
+# --- Task Z (pseudo-prior constant robustness; taskZ_robustness.txt) ---
+0.009397              experiments/taskZ_robustness.py idealised_3rung_gap:P1,mu=1e-8    2026-07-02
+0.005054              experiments/taskZ_robustness.py worst_gap_factor2_Zerr (0.54x)    2026-07-02
+0.016407              experiments/taskZ_robustness.py gap_overest_f=2_both              2026-07-02
+# eigenvalue ordering (taskZ_robustness.txt, recorded 2026-08-13): lam2 in [0.9836,0.9949], lam_min in [0.0412,0.2485];
+#   all lam_min POSITIVE (P1 three-rung ladder is PSD), |lam_min|<lam2 in all 11 cases => lambda_star=lambda_2, gap=1-lam2
+# --- M10 fit windows + derived local slopes (arithmetic on printed gaps) ---
+0.92,0.99,1.00        derived: pred2_numbers.txt      P1_KR_decade_slopes (0.1->1e-4)   2026-07-02
+0.78,0.96             derived: pred2_generality.txt   table_KR_decade_slopes (0.1->1e-3) 2026-07-02
+0.001                 results/taskV_numbers.txt       P1_3rung_local_slope:1e-6->1e-8   2026-07-02
+0.0002,0.0000         results/taskV_hardening_numbers.txt table_3rung_local_slope:1e-12,1e-16 2026-07-02
+0.3%,0.2%             derived: taskV files            floor_drift:P1[1e-8,1e-6],table[1e-16,1e-8] 2026-07-02
+# --- m6: Pred 7 sparsest-bin uncertainty (Wilson 95%, printed in pred7 files) ---
+[0.565,0.980],n=9     results/pred7_numbers.txt       CI_0.889:(6,16) s[0.20,0.25)      2026-07-02
+[0.248,0.699],n=15    results/pred7_numbers_shape2.txt CI_0.467:(10,40) s[0.15,0.20)    2026-07-02
+0.828[0.782,0.865],n=319 results/pred7_numbers.txt    matched_bin:(6,16) s[0.3,0.4)     2026-07-02
+0.008[0.002,0.030],n=239 results/pred7_numbers_shape2.txt matched_bin:(10,40) s[0.3,0.4) 2026-07-02
+# --- Pred 5 headline-cell seed replicates (pred5_replicates.txt) ---
+2.074+/-0.019         experiments/pred5_replicates.py Ref/SR_ESSiter:pois pair,5 seeds  2026-07-02
+2.064+/-0.029         experiments/pred5_replicates.py Ref/SR_ESSiter:nb pair,5 seeds    2026-07-02
+PASS                  experiments/pred5_replicates.py gate:seed1==grid (34101/72455/34821/70181) 2026-07-02
+# --- Pred 4 plateau mechanism ablation (pred4_ablation.txt, editor round 2) ---
+2.025,2.754           experiments/pred4_mechanism_ablation.py bare-band_ridge_Ref/MHray==plateau 2026-07-02
+1.12,1.55             experiments/pred4_mechanism_ablation.py bare-band_ridge_Ref/Gibbs         2026-07-02
+3.86,5.84             experiments/pred4_mechanism_ablation.py bare-band_uniform_Ref/Gibbs       2026-07-02
+4.1,5.6               experiments/pred4_mechanism_ablation.py ridge_speedup_of_Gibbs_baseline   2026-07-02
+# --- alpha-sweep quotes for the obstruction evidence (pred2_numbers.txt) ---
+0.24,0.61,0.81        results/pred2_numbers.txt       DA_floor:alpha=0.5,1.9,5 (2dp)    2026-07-02
+# --- Editor round 3: P4 hypothesis check + derived quote provenance ---
+0/102                 experiments/pred6_ubalance_check.py  P4_failing_PLBs_with_balanced_U   2026-07-02
+102/102               experiments/pred6_ubalance_check.py  P4_failing_deg2_witness_exists    2026-07-02
+102/102               experiments/pred6_ubalance_check.py  P4_all_deg2_witnesses_balanced    2026-07-02
+6/12                  experiments/pred6_ubalance_check.py  P4_passing_PLBs_with_balanced_U   2026-07-02
+0.53,0.91,1.03,1.00   results/pred3_bands.txt         pred3_ratio_over_kappa (derived from unrounded 1.14/3.86/7.31/10.57 over 2.15/4.26/7.08/10.61; "within 10%" from kappa=4.3, worst 9.4%; r3 row 0.51,0.89,1.03,0.99 divided the rounded quotes) 2026-07-02
+# --- Editor round 4: derived quote provenance ---
+3.50,4.86             results/pred4_ablation.txt      ridge_speedup_of_MHray_baseline (manuscript 3.5/4.9) 2026-07-02
+4.12,5.63             results/pred4_ablation.txt      ridge_speedup_of_Gibbs_baseline (manuscript 4.1/5.6; 2dp source behind the r2 row above) 2026-07-02
+1.20,1.49             results/pred4_ablation.txt      ridge_movement_of_Ref_gap (manuscript: at most factor 1.5) 2026-07-02
+1.51,1.17,1.043,1.023,1.020  derived: taskV_numbers.txt SR-NB over pred2_numbers.txt NB_gap(a=1.9)  direct-NB-chain over K_1 gap ratio at mu5=1,0.1,0.01,1e-3,1e-4 (manuscript: factor 1.5 at mu5=1, within 5% for mu5<=1e-2) 2026-07-02
+# --- Editor round 5: MC-operator seeds + MC-vs-quadrature calibration ---
+seed=3                fibresampler/augment.py:kr_operators   R-sweep MC operator seed (hardcoded default; callers pass no seed) 2026-07-02
+seed=0                fibresampler/augment.py:da_operator    exact-resample (R->inf) MC operator seed (hardcoded default) 2026-07-02
+0.16                  derived: pred2_generality.txt  MC-vs-quadrature K_1 gap gap at mu=1e-3 P1: (9.771e-5 quad - 8.236e-5 MC)/9.771e-5 = 15.7% (calibrates M=800 MC error; quoted "about 15%") 2026-07-02
+# --- DELTA 7 (Nick merge): derived robustness bound in prop:robust(ii) ---
+1.5e-4                derived: taskV_numbers.txt three-rung floor 0.0094 x e^{-6 log 2}=1/64=0.015625 -> 1.469e-4 (worst-case pseudo-prior-error floor guaranteed by prop:robust(ii) at eta=log2; measured worst 0.0051 sits a factor 35 above; CORRECTED 2026-07-02 post-commit math audit: e^{-4 eta} undercounted, edge flows move e^{+-4eta} AND variances e^{+-2eta}, so the DSC comparison constant is e^{-6 eta}) 2026-07-02
+# --- DELTA 8 referee point 2: second-seed stability of the MC-assembled operators (alpha=1.9, mu=1e-3; pred2_secondseed.txt) ---
+1.054,1.084           results/pred2_secondseed.txt   P1_q_exponent:kr_seed=3_ref,seed=1 (|dq|=0.030=2.9%; manuscript "0.03")   2026-07-04
+0.990,0.992           results/pred2_secondseed.txt   table_q_exponent:kr_seed=3_ref,seed=1 (|dq|=0.002=0.2%; manuscript "0.002") 2026-07-04
+0.6116,0.6118         results/pred2_secondseed.txt   P1_DA_floor:da_seed=0_ref,seed=1 (0.0% drift; under half a per cent)       2026-07-04
+0.7016,0.6997         results/pred2_secondseed.txt   table_DA_floor:da_seed=0_ref,seed=1 (0.3% drift; under half a per cent)    2026-07-04
+# --- Martin's toy running example: enumerated fibre sizes behind fig_toy_fibre.pdf (ex:toy / fig:toy) ---
+10,12                 experiments/fig_toy_fibre.py   toy_fibre_sizes:balanced_(4,4|3,3,2)_panel_a,thin_(6,6|1,5,6)_panel_b     2026-07-04
+# --- Tier C: counting / rare-event estimators (sec:tables; Hopper job 8880044, hop072; cross-checked vs exact enumeration) ---
+10                    experiments/counting_estimators.py  CE_count_exact:subtree_tilt_zero_variance:balanced_2x3          2026-07-09
+0.20                  experiments/counting_estimators.py  CE_count_uniform_proposal_sd_over_mean:balanced_2x3            2026-07-09
+2.0,0.0               experiments/counting_estimators.py  SE_sd:B1_Knuth,B4_treewidth (mean 10.0 unbiased)               2026-07-09
+9.132813e-03          experiments/counting_estimators.py  NS_exact_Z:mu0.05:balanced_2x3 (C=Z|F|=0.0913)                 2026-07-09
+7.365285e-03          experiments/counting_estimators.py  NS_exact_Z:mu0.01:balanced_2x3 (C=0.0737)                      2026-07-09
+-26.3239              experiments/counting_estimators.py  NS_exact_logZ:mu0.15:(12,12|8,8,8)_|F|=61                      2026-07-09
+0.3819,0.1828         experiments/counting_estimators.py  NS_livepoint_err_nats:N=5,N=160 (40 reps, |F|=61)              2026-07-09
+0.20                  experiments/counting_estimators.py  NS_Xpinch_fixed:balanced_2x3 (Lpinch=Theta(mu))                2026-07-09
+0.06986               experiments/counting_estimators.py  SP_exact_C:mu1e-3:balanced_2x3 (splitting sampled 1.4% err)    2026-07-09
+0.50,0.50             experiments/counting_estimators.py  SP_level_updown_freq (NS one-directional: down=0)              2026-07-09
+
+======================================================================================
+M4 -- real-data-scale ESS/second benchmark: P2 Auckland SH16 (Hazelton 2024, Sec 6)
+  source: experiments/m4_realdata_ess.py; results/m4_numbers.txt
+  run: fibre NOT enumerated (free dim r-n=14); 3e5 iters + 3e4 burn, 3 seeds, base 20260709
+  cross-ref: quoted in sec:realscale (Sec 8)
+  y = (2991,3352,3977,4576,3849,2458,978); max|A theta*-y| = 6.26e-06 (feasibility of ML fit)
+  anisotropy (uniform fibre): covariance spread 18.2 (route-SCALE); correlation spread 2.58 (OBLIQUENESS)
+  step-cost ratio vs single ray: B2 2.59x, B4 4.26x, B8 6.24x, B16 10.6x  (us/step 37.6 -> 97.5/160/234/399)
+  uniform  SR      worst-coord ESS/sec 430.6 (single grid seed); 3-seed mean 301.8 +/- 8.4  [PAPER: "about 300"]
+  uniform  Ref/B2  ESS/sec 64.8 (grid); 3-seed mean 63.6 +/- 1.9   [PAPER B2 value]
+  uniform  Ref/B4  ESS/sec 24.7 ;  Ref/B8 10.3 ;  Ref/B16 3.4  (monotone fall)  [PAPER sweep]
+  pois-wc  SR      worst-coord ESS/sec 8.9 (PAPER "about 9"); median ESS/sec 33.9 (PAPER "34")
+  nb-wc    SR      worst-coord ESS/sec 0.7 (PAPER "near 1"); median ESS/sec 2.8 (PAPER "3"); alpha_NB=1.9
+  pois-me  SR      worst-coord ESS/sec 0.4 (PAPER "about 0.4"); n_empty = 5 routes below floor 25, theta*_min 0.6
+  pois-me  Ref/SR  ESS/sec ratio 0.48 (PAPER "approx 0.5") -- reflection gives no rescue in the loading regime
+  all cells: G0 ok (A x = y preserved bit-for-bit at every step)
+  NOTE: Hopper sbatch (experiments/hopper_m4.sbatch, 1e6/5-seed) staged; reported numbers are the local 3e5/3-seed run.
+======================================================================================
+
+======================================================================================
+M4 BREADTH -- ESS/second across a VARIETY of real network-tomography problems
+  source: experiments/m4_variety.py; results/m4_variety_numbers.txt
+  run: 3e5 iters + 3e4 burn, single seed 20260709; kernels pred5_ess.py; alpha_NB=1.9
+  cross-ref: quoted in sec:realscale "Across real networks: the obliqueness deficit is generic"
+  Three real fibres of increasing size (all G0 ok = A x = y preserved):
+    P1 Hazelton Ex.2/11  (8 routes, 4 links, free dim 4)
+    VARDI 4-node         (Vardi1996 Ex.1 / TebaldiWest1998 Fig.1; 12 routes, 7 links, free 5;
+                          matrix + witness X=(2,2,0,8,5,7,6,4,9,7,17,11) verified A x=y; Y=(2,28,9,5,34,16,35))
+    P2 Auckland SH16     (21 routes, 7 links, real road loads, free dim 14)
+  obliqueness (corr eigenvalue spread): P1 1.76, VARDI 1.99, Auckland 2.55  [PAPER ~1.8/~2.0/~2.6]
+  uniform reflective/single-ray ESS/sec ratio: P1 0.20, VARDI 0.11, Auckland 0.17  [all <1: single-ray wins]
+  loading (raw ML fit) worst-coord SR ESS/sec: P1 1759, VARDI 311, Auckland 0.43  [PAPER Auckland ~0.4]
+    -> loading collapse visible only AT SCALE; small fibres near-enumerable so mix fast regardless of mean
+  Monroe NC (TebaldiWest1998 Sec.4, 20x64): real but data in figures only, NOT reproduced (disclosed in text)
+======================================================================================
+
+======================================================================================
+M4 10^6/5-seed CONFIRMATION (Hopper job 8995678, hop058, COMPLETED 1h35m; numpy 1.24.4)
+  source: results/m4_numbers_10e6_hopper.txt (full grid)
+  cross-ref: robustness sentence in sec:realscale intro paragraph
+  Confirms the 3e5/3-seed pilot on all IMPLEMENTATION-INDEPENDENT quantities:
+    obliqueness (corr spread): 2.59 (pilot 2.58) ; covariance spread 18.1 (pilot 18.2)
+    uniform per-iteration Ref/SR ESS ratio: 0.41 (pilot 0.39)
+    uniform acc B2/B4/B8/B16: 0.436/0.392/0.334/0.301 (pilot matched)
+    sampler ranking unchanged; loading collapse present (pois-me worst-coord ESS/iter ratio 0.06)
+  seed replication (uniform, 5 seeds) worst-coord ESS/sec ON HOPPER NODE:
+    SR 214.6 +/- 3.6 ; Ref/B2 28.2 +/- 1.7
+  HARDWARE NOTE: Hopper node ~2.1-2.5x SLOWER per step than local workstation
+    (uniform SR 79.3 us/step Hopper vs 37.6 local; nb-wc SR 419.5 vs 166.9), so Hopper
+    ESS/SEC are correspondingly lower; ESS/ITER and all ratios are machine-independent
+    and match the pilot. Manuscript reports workstation ESS/sec (3e5/3-seed) for internal
+    consistency with the m4_variety.py breadth run (also on the workstation).
+======================================================================================
+
+======================================================================================
+SPLIT ESCAPE (new sec:split) -- exact SLEM, deterministic, NO Monte Carlo
+  source: Nick Polson bundle (2026-07-22); verified + P1 confirmed on canonical A_P1 2026-08-07
+  code: experiments/split_escape/{fibrelib,exp1_table,exp2_band,exp3_fusion,exp4_p1,exp4_canonical}.py
+  full sweep tables: results/split_escape_numbers.txt
+  cross-ref: thm:split-law, cor:split-work, prop:split-reflect, contribution (vi), abstract clause
+  max detailed-balance violation across ALL split experiments: 1.18e-16 (exact reversibility)
+
+  (1) TABLE (running example, alpha=1.9), spectral gap floor as mu5 -> 0:
+      tempering T3 (beta=1,0.5,0)          0.01232   <- floors but low
+      split S2 (NB rung + uniform)         0.02398
+      split S3 (NB + midlevel + uniform)   0.03664   = 2.97x tempering  [HEADLINE]
+      S-keep (rung clears the pinch)       0.02289   escapes (slope +0.000)
+      S-excl (rung below the pinch)        collapses (slope +1.000)     [dichotomy, def:pinch]
+      SR-NB single ladder-free             1.55e-06  collapses (slope +1.000, control)
+
+  (2) P1 canonical (paper's A_P1, y=(4,4,2,2), jstar=col4, |F|=55, K=3 lobes), floor:
+      tempering T3    0.00943
+      split S2        0.01653   = 1.75x
+      split S3        0.01815   = 1.93x tempering
+      S-keep          0.00972 escapes ; S-excl 2.30e-8 collapses (slope +1)
+      uniform-target gap 0.119828 (matches Nick reconstruction bit-identical -> P1 caveat closed)
+      lobe sizes (6,8,9) on the 23-state zero stratum; Poisson gap pair (0.0648, 0.001274) at theta5=1,0.01
+      band kappa-reproduction (exp2_band.py): gap ratios 2.14/4.67/10.57 at kappa=3.5/6.4/10.6 (Pred-3 consistency gate)
+      NOTE cor:split-work(c) ESS/useful-visit uses delta/(2(L+1)): table 0.0061 vs 0.0021, P1 0.0030 vs 0.0016 (ratio = floor ratio)
+
+  (3) FUSION (reflective split, decoupled band x table product fibre), floor is kappa-IMMUNE:
+      kappa=4.95 (C=14, 220 states): single-ray split 0.007521 ; split-REFLECTIVE 0.01105
+      kappa=7.78 (C=22, 340 states): single-ray split 0.003180 ; split-REFLECTIVE 0.01105
+      -> split-reflective floor FLAT in kappa (0.01105 both) while single-ray split falls
+         0.00752 -> 0.00318 with obliqueness; reflective-split is the only ablation-grid cell
+         at once flat in mu AND immune to the axis defect (prop:split-reflect)
+
+  (4) gap advantage at mu=1e-6 (split S3 / tempering T3): table 2.97x, P1 1.93x; both
+      Theta(1) work/sweep vs Theta(1/mu_jstar) refresh of cor:Rescape (cor:split-work)
+======================================================================================
+
+======================================================================================
+REFEREE RESPONSE (2026-08-12) -- point A/J/K productivity diagnostic
+  code: experiments/refA_productivity.py ; full table results/refA_productivity.txt
+  D = rms ||sum_s b_s d^(s)||_2 net free-frame move ; P = mean sum_s b_s (cost/steps)
+  6000 uniform-stationary starts per (kappa,K), seed 20260812, exact band billiard.
+
+  [SUPERSEDED 2026-08-13: "saturation" below is the pre-peak GROWTH window only; past B~kappa
+  the reach PEAKS near the diameter then declines/oscillates (billiard is PERIODIC) -- see entry
+  #1 near line 346. The kappa-factor mixing gain in the growth regime B+1<~kappa stands.]
+  Long-axis reach sigma=s+t is COHERENT (ballistic) up to the diameter peak;
+  short-axis delta=s-t CANCELS (bounded ~2w).  Fitted exponents:
+    kappa   gamma(D~P)  gamma_long(D_long~K legs)  reach/a  max flight/walk
+     2.15      0.457        0.731                    1.42       2.46
+     4.26      0.655        0.937                    2.95       3.43
+     7.08      0.703        0.890                    5.02       4.56
+    10.61      0.734        0.890                    7.09       4.73
+  gamma_long ~ 0.9 (coherent) for kappa>=4.26 ; D_long PEAKS at diameter L after
+  ~kappa legs, then D/P decays (K=1:~1.3 -> K=24:~0.1) as extra legs add path w/o reach
+  (NOT a plateau: past the peak the periodic billiard makes reach non-monotone; see #1 ~L346).
+  flight/walk = long-axis reach of one K-leg flight / K cost-matched independent single
+  rays, peaks 2.5-4.7x at B*~kappa and GROWS with kappa. reach/a ~ 0.7*kappa (single-ray
+  chord a=L/kappa -> reflective flight reaches Theta(kappa*a)=Theta(L) coherently).
+  RESOLUTION: productive regime EXISTS (referee (ii)) but bounded B<=~kappa; past that the
+  referee's linear-cost/sqrt-gain no-go correctly bites (wasted short-axis walking).
+======================================================================================
+
+======================================================================================
+REFEREE RESPONSE (2026-08-12) -- point K: kappa vs obliqueness (exact, band family)
+  code: experiments/refK_obliqueness.py ; results/refK_obliqueness.txt
+  obliqueness = corr-eigenvalue-spread sqrt(lam_max/lam_min) of (s,t) under uniform law.
+    kappa   oblq_corr  sqrt2*kappa  spread_cov  evec.(1,1)  angle_to_axis
+     2.15     2.58       3.04         2.6        1.0000        45 deg
+     4.26     5.03       6.02         5.0        1.0000        45 deg
+     7.08     8.29      10.01         8.3        1.0000        45 deg
+    10.61    10.95      15.00        11.0        1.0000        45 deg
+  obliqueness ~ kappa (1.1-1.2x); strip-limit closed form obliqueness=sqrt2*kappa is the
+  upper envelope, finite triangular ends pull it to ~kappa. Principal correlation axis is
+  EXACTLY the 45-deg diagonal = the long fibre axis. Validates the SH16 ~2.6 obliqueness
+  proxy (Sec 6.1): kappa IS the correlation-spread anisotropy, up to sqrt(2). Covariance
+  spread coincides here (equal marginal scale) but on SH16 carries route-scale (~18) too.
+
+REFEREE RESPONSE (2026-08-12) -- point D: SH16 per-B_max cost/mixing breakdown
+  code: experiments/refD_sh16_bmax.py ; results/refD_sh16_bmax.txt  (uniform target)
+  RESOLVES the 6.1 "85x cost for 8x B_max" misread: the ESS/sec fall = cost x per-iter
+  degradation, each unremarkable. cost ratio Ref/SR = time/step_Ref/time/step_SR grows
+  ~O(B_max) (2.83 -> 11.66 for B_max 2->16, factor 4.1 for 8x). B_max=2 cost 2.83 MATCHES
+  Prediction 5's stated 2.5-3.8x default-tuning step cost. Guard-block rate rises 0.30->0.55,
+  mean realised bounces 0.71->7.1, mean walked path 335->2444 (large-fibre rays are long).
+  [40k-iter validation numbers; full 300k run supersedes -- see refD_sh16_bmax.txt]
+======================================================================================
+
+======================================================================================
+REFEREE RESPONSE (2026-08-12; FULL CENSUS 2026-08-13) -- point F: acceptance + guard-block rates
+  code: experiments/refF_guard.py ; results/refF_guard.txt (uniform target, B_max=2, 2e5 iters)
+  guard = fraction of proposals with q^ref=0 (non-invertible bounce OR stuck leg b^max=0).
+  CENSUS over ALL 142 integral PLBs (min/mean/median/max within each magnitude class):
+    P4/max|n|=1 (114 PLBs): guard 0.600/0.676/0.688/0.738  acc 0.218/0.269/0.258/0.325  meanB 0.71
+    P4/max|n|=2 ( 28 PLBs): guard 0.754/0.786/0.785/0.809  acc 0.163/0.184/0.184/0.202  meanB 0.49
+    control P1 (TU-like)  : guard 0.680  acc 0.274  meanB 0.64
+    control band(2,24)    : guard 0.289  acc 0.608  meanB 0.95
+  P4 has 142 integral PLBs: 114 with max|n|=1, 28 with max|n|=2 (the |n_i|>=2 case DOES occur
+  on P4 in integral PLBs). Guard rate = stuck-legs (fibre-size dependent) + non-invertible
+  bounces (|n|>=2 dependent), but the guard counter is COMBINED (stuck-leg / non-invertible /
+  qrev=0), not decomposed by cause; the class-mean increment 0.68->0.79 from |n|=1 to |n|=2 is
+  associated with the |n|=2 normals and consistent with additional non-invertibility, NOT a
+  measured decomposition. Band is well-behaved (guard 0.29). Guards are the measured
+  price of the exact reverse-path rule (Sec 4), reconciling it with the Sec 3 proposal.
+  [SUPERSEDED pre-census single representatives: P4/|n|=1 guard 0.616 acc 0.310; P4/|n|=2 guard 0.771 acc 0.191]
+======================================================================================
+
+## M8 geometric-assumption verification (experiments/verify_assumptions.py, deterministic)
+P1 (Hazelton, fibre 55, bottleneck coord idx 4): |D|=23, K=3 lobes, border 32/32 drain (max len 4), k*=1
+2x3 table (fibre 10, bottleneck idx 0 = x11): |D|=2, K=2 lobes, border 8/8 drain (max len 3), k*=1
+=> ass:lobes (K>=2) HOLDS both; ass:drain (all border states drain) HOLDS both; corridor height k*=1 both
+
+## M9 spectrum-law exponent fits with standard errors (experiments/m9_fit_uncertainty.py, deterministic)
+# fit window mu5 in {1e-2,1e-3,1e-4,1e-6,1e-8}; exponent = OLS log-log slope of exact joint gap; k*=1
+beta_min=0.00: exponent 0.050(SE 0.011), R2=0.867, local slopes +0.131,+0.079,+0.041,+0.015 (floor approach)
+beta_min=0.25: exponent 0.264(SE 0.004), R2=0.9992, deepest local slope 0.253
+beta_min=0.50: exponent 0.519(SE 0.005), R2=0.9997, deepest local slope 0.504
+beta_min=0.75: exponent 0.766(SE 0.004), R2=0.9999, deepest local slope 0.754
+beta_min=1.00: exponent 1.000(SE 0.000), R2=1.0000, deepest local slope 1.000
+# OLS exponents sit ~0.01-0.02 above beta_min (finite-window bias); local slopes converge down to beta_min
+
+# --- Escapes III: the rim (helpers/fig_rim.py; 3x3 (4,1,4)|(4,1,4); base |F|=21, rim-extended |Fx|=285, blowup 13.57) ---
+# exact joint-chain SLEM gap 1-lambda_star. ladder {1,1/2,0} on F is reducible (gap identically 0 at every mu).
+0.0                   helpers/fig_rim.py   rim_ladder_only_gap:all_mu (reducible, identically 0)             2026-08-13
+4.602e-3              helpers/fig_rim.py   rim+ladder_gap:mu=1e-1                                             2026-08-13
+2.857e-3              helpers/fig_rim.py   rim+ladder_gap:mu=1e-2                                             2026-08-13
+2.260e-3              helpers/fig_rim.py   rim+ladder_gap:mu=1e-3                                             2026-08-13
+2.055e-3              helpers/fig_rim.py   rim+ladder_gap:mu=1e-4                                             2026-08-13
+1.962e-3              helpers/fig_rim.py   rim+ladder_gap:mu=1e-6                                             2026-08-13
+1.953e-3              helpers/fig_rim.py   rim+ladder_floor:mu=1e-8 (composed floor, flat last 4 decades)     2026-08-13
+5.206e-4              helpers/fig_rim.py   rim_only_gap:mu=1e-2                                               2026-08-13
+5.315e-10             helpers/fig_rim.py   rim_only_gap:mu=1e-8                                               2026-08-13
+1.00                  helpers/fig_rim.py   rim_only_loglog_slope (Theta(mu): corridor created, not flattened) 2026-08-13
+13.57                 helpers/fig_rim.py   rim_blowup_|Fx|/|F|=285/21                                        2026-08-13
+
+# --- GPT-audit-2 response verification (2026-08-13): PSD/lazification of level moves ---
+# eigcheck.py on split_escape/fibrelib three-rung operators (2x3 table, alpha=1.9), pi-symmetrized eigvalsh:
+# T3 beta-ladder {1,.5,0} is NOT PSD: lam_min(mu=0.1)=-0.089823 (matches external audit); lam2=0.908593 so SLEM=lam2.
+# |lam_min|<lam2 at EVERY mu in {1e-1..1e-6} for BOTH T3 and S3 -> reported exact SLEMs (=1-lam2) unaffected by the
+# subdominant negative eigenvalue. S3 split ladder stays nonneg (lam_min>=0.0131). Laziness enters only the lower-bound
+# proofs (lem:decomp hyp (c)); exact tables report second-largest modulus of the un-lazified operator. 2026-08-13
+
+# --- Second-opinion review verification (2026-08-13) ---
+# #1 band productivity: wall-to-wall flight (refA flight_to_walls, uniform starts) at B=2C legs, w=1:
+#   C=12 meanDisp 0.398 / diam 8.49 (ratio 0.047); C=30 0.358/21.21 (0.017); C=80 0.356/56.57 (0.006).
+#   => displacement is O(1) at large B, NOT Theta(kappa a); billiard is PERIODIC, reach non-monotone
+#   (C=30: peaks ~6.8 at B~15-45, crashes ~0.35 at B=60,120). prop:bandprod saturation claim was FALSE;
+#   growth regime B+1<~kappa is correct (D_long peaks near diameter at B~kappa, flight/walk ~4.7). 2026-08-13
+# #5 target-to-uniform ratio (2x3 table, mu=0.1): Z0/Z1(true)=0.52579. WRONG rung-1 avg of pi~ =0.50623
+#   (biased, matches reviewer). CORRECT rung-0 bridge Z1/Z0=E_pi0[1{x in A(m1)}/pi~]=1/0.52579; bounded
+#   (max 1/pi~ on A1 = 6.897 = 1/m1). 2026-08-13
+# #2 lam_min(T_L) across grid (2x3 table): T3 in [-0.0898, +0.238], S3 in [+0.013,+0.079]; all >= -1/2,
+#   confirming lam_min(T_L)>=-1/2 from T_L=1/2 F + 1/2 L (F PSD, L reversible contraction). 2026-08-13
+# --- referee revision 2026-08-14: precision + 3x3x2 (Hopper) ---
+5.31452e-10           helpers/verify_rim_precision.py  rim_only_gap:mu=1e-8 EXACT-rational+mpmath 60dp (confirms tab:rim 5.3e-10; lambda_min=-4e-61 PSD; double agrees 7 sig figs) 2026-08-14
+164                   experiments/ref_3x3x2_rim.py  3x3x2 no-3way rim size (base |F|=12, 2 components, blow-up 13.7x) 2026-08-14
+0.94,0.10             experiments/ref_3x3x2_rim.py  3x3x2 rim-only slope Theta(mu) / composition floor 5.9e-3 slope~0 (create-then-flatten on honest example) 2026-08-14
+# --- Paper I referee revision 2026-08-14 (M5 obliqueness, M1/M2 involution) ---
+1.01,0.74             experiments/refK_obliqueness.py  ratio obliqueness/(sqrt2*kappa) on (P1),(P4): kappa vs correlation-eigenvalue obliqueness track linearly [M5] 2026-08-14
+1.22,1.75             experiments/refK_obliqueness.py  P1 axis defect kappa=1.22, obliqueness=1.75 (=sqrt2*kappa, ratio 1.01), align_diag; enumerable 55-state fibre 2026-08-14
+1.56,1.65             experiments/refK_obliqueness.py  P4 kappa=1.56, obliqueness=1.65 (ratio 0.74, stable across margin scales x1/x2, 64/486 states) 2026-08-14
+20of32                (inline check, Def 8) L_n non-involutive for 20/32 signed-unit bounces at {0,+-1}^2 normals; guard NOT vacuous on TU fibres [M1] 2026-08-14
+# --- Paper II referee 2.7: corridor height k*=2 regime (Hopper search + local SLEM) 2026-08-14 ---
+# k*=2 fibre A=[[1,1,1,1],[1,2,0,1]] y=(4,5) cols1=(0,1) jstar=0: |F|=6, |D(x0=0)|=2, K=2 lobes,
+#   border 4/4 drained, pairwise-peak [[0,2],[2,0]] => k*=2. Hopper search returned 11 k*=2 fibres.
+1.986,1.986           experiments/ref_kstar2_slice.py  k*=2: slice gap slope & SR untempered slope vs mu (predict k*=2) [2.7] 2026-08-14
+0.982                 experiments/ref_kstar2_slice.py  k*=2: tempering beta=1/2 slope (predict k* beta_min=1, softened) [2.7] 2026-08-14
+1.695e-2,0.053        experiments/ref_kstar2_slice.py  k*=2: tempering beta=0 uniform-rung floor & slope (predict 0, escape) [2.7] 2026-08-14
+
+# --- Q1 (Martin Hazelton, 2026-10-01 email, point 1): change of basis versus reflection, Paper I Section 'basis' and Paper II Section 'basis' ---
+# all values below are deterministic exact gaps unless marked 'chain'; per-row sources are the results files named
+0.1172,0.0325,0.0120,0.0070,0.0109,0.0069,0.0056,0.0170,0.1198,0.2959,0.1292 experiments/refQ1_basis_change.py              PI tab:basis col PLB: exact uniform-target single-ray gap, 11 fibres (band(2,12),(2,24),(2,40),(1,30), ridge(3,2;4,30),(3,2;3,30),(5,3;6,40), table 6x6|1,5,6, P1, table 4x4|3,3,2, P4) 2026-10-02
+0.2657,0.3341,0.3715,0.4087,0.2940,0.2469,0.2762,0.5000,0.1198,0.2959,0.1292 experiments/refQ1_basis_change.py              PI tab:basis col selected: gap of the selector's frame (identity on the last three) 2026-10-02
+0.1337,0.1254,0.0878,0.0737,0.0443,0.0402,0.0591,0.0528,0.0524,0.1866,0.0601 experiments/refQ1_basis_change.py              PI tab:basis col Ref: better of Ref-B2/Ref-B4 exact gap 2026-10-02
+2.27,10.29,30.94,58.63,26.87,35.54,49.49,29.35,1.00,1.00,1.00 experiments/refQ1_basis_change.py              PI tab:basis sel/PLB gap ratio (text: 2.3 to 58.6 on the 8 thin fibres) 2026-10-02
+1.99,2.67,4.23,5.54,6.64,6.14,4.67,9.47,2.29,1.59,2.15 experiments/refQ1_basis_change.py              PI tab:basis sel/Ref per iteration (text: 2.0 to 9.5 thin; 1.6 to 2.3 on round fibres) 2026-10-02
+7.56,11.87,21.19,38.41,41.20,33.51,30.19,28.59,5.37,4.99,5.48 experiments/refQ1_cost_adjusted.py             PI tab:basis per-time ratio sel/Ref (gap per measured microsecond; text 7.6 to 41 on thin fibres) 2026-10-02
+2.15->1.34,4.26->1.13,7.08->1.07,10.61->1.01,5.41->1.27,7.21->1.67,7.29->1.00,7.81->1.02 experiments/refQ1_basis_change.py              PI tab:basis axis defect kappa -> kappa_V of the selected frame on the 8 thin fibres (text 2.2-10.6 to 1.0-1.7); P1 1.22, table 1.20, P4 1.56 identity 2026-10-02
+0.49,0.57,0.62,0.52                          experiments/refQ1_basis_change.py              sel/PLB over kappa^2 on band(2,12),(2,24),(2,40),(1,30) (text: 0.49 to 0.62 kappa^2) 2026-10-02
+0.97-1.03,2.27-4.77,2.89-7.52                experiments/refQ1_basis_change.py              measured step cost relative to SR: LLL, Ref-B2, Ref-B4 over 11 fibres (text: 0.97-1.03; 2.3-4.8; 2.9-7.5) 2026-10-02
+0.1121,0.1292                                experiments/refQ1_basis_change.py              P4 forced SR-LLL gap versus PLB gap (-13%: the selector's reason for existing) 2026-10-02
+0.0770,0.1198                                experiments/refQ1_basis_change.py              P1 pilot of 300 steps: worst seed exact gap of the pilot-selected basis vs PLB; 1000-step pilots exact on 6 fibres x 20 seeds 2026-10-02
+1.44,4.81,1.46,0.3775,0.0325                 experiments/refQ1_basis_change.py              product-Poisson (mean 1) sel/SR on P1, table 6x6|1,5,6, P4(x2); band(2,24) keeps PLB: PLB gap 0.3775 (Poisson) vs 0.0325 (uniform) 2026-10-02
+0                                            results/refQ1_band_bound.txt                   checks failed on the grid w in {1,2,3,5,8}, 4w<=C<=400: identity (1-rho)/2 to 1e-8, bound (i), lower bound (ii); largest phi^2/y 0.741; ratio/kappa^2 0.4 to 0.8 2026-10-02
+5.63,8.17,63.46,50.19                        experiments/refQ1_fibonacci_slope.py           PI Fibonacci-slope bands (2/1,3/2,5/3,8/5): sel/Ref per iteration; 13/8: PLB and Ref gap 0, selected 0.278 2026-10-02
+2.56,2.82,14.75,2.53                         experiments/refQ1_sh16_aggregate.py            PI SH16 obliqueness: uniform PLB 2.56, reduced 2.82; fitted Poisson (floored) PLB 14.75, reduced 2.53 (mean over 5 seeds; Hopper results/q1_sh16/*.json) 2026-10-02
+12.4,34.6                                    experiments/refQ1_sh16_aggregate.py            PI SH16 pilot+LLL seconds, uniform and fitted Poisson (100000-step PLB pilot) 2026-10-02
+0.83(0.08),0.83(0.08),0.60(0.06)             experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 uniform SR-LLL vs SR per iter, per s, per s incl pilot; 5 seeds chain 2026-10-02
+1.01(0.02),1.01(0.02),0.73(0.01)             experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 uniform union (SR-U) per iter, per s, incl pilot; chain 2026-10-02
+0.40(0.01),0.15(0.00)                        experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 uniform Ref-B2 per iter and per s (us/step 266.8 vs 97.6 = 2.73x); chain 2026-10-02
+17.05(5.11),27.48(15.19),15.80(7.17)         experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 fitted Poisson SR-LLL per iter, per s, incl pilot; chain 2026-10-02
+11.76(0.42),11.13(0.39),8.10(0.28)           experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 fitted Poisson union (SR-U) per iter, per s, incl pilot; chain (text: 11.8-fold, 11.1, 8.1) 2026-10-02
+11.44(4.71),10.21(4.20),2of5 stuck           experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 fitted Poisson selected-alone; non-stuck 19.06(1.13) per iter, 17.01(1.00) per s over 3 seeds; chain 2026-10-02
+0.02(0.01),0.02(0.01)                        experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 fitted Poisson Ref-B2 per iter and per s (worst ESS 2.08e-5 per iter = ~6 in 3e5); chain 2026-10-02
+14.1-20.2                                    experiments/refQ1_sh16_aggregate.py            PI SH16 fitted Poisson selector surrogate gains per seed (text 14 to 20); selector chose climb(lll) in 5/5; uniform: identity 5/5 2026-10-02
+0.025,0.014-0.034,0.017,0.67,0.49-0.92       experiments/refQ1_ref_b0_probe.py              PI Metropolised ray B0 vs SR Gibbs on SH16 fitted Poisson: B0/SR mean 0.025 (seeds 0.028,0.014,0.034), B2/SR 0.017, B2/B0 0.67 (0.92,0.59,0.49); 3 seeds chain 2026-10-02
+0.998,0.984,1.996,1.995,2.000,2.000,1.997,1.999 experiments/refQ1_loading_generality.py        PII tab:holdfixed PLB log-log slope of exact single-ray gap in mu (mu<=0.03) on P1, table, 2x4 k*=2, hits 1-5 2026-10-02
+-0.005,-0.005,-0.011,-0.009,-0.001,-0.000,-0.010,0.000 experiments/refQ1_loading_generality.py        PII tab:holdfixed hold-fixed slope on the same 8 fibres 2026-10-02
+1.29e-7,3.75e-6,1.00e-12,8.75e-13,4.30e-13,1.25e-13,1.50e-12,2.78e-13 experiments/refQ1_loading_generality.py        PII tab:holdfixed PLB exact gap at mu=1e-6 2026-10-02
+0.1197,0.3419,0.5000,0.5000,0.5000,0.0500,0.5000,0.1292 experiments/refQ1_loading_generality.py        PII tab:holdfixed hold-fixed exact gap at mu=1e-6 (text: 0.05 to 0.50; P1 0.120, table 0.342, hit 5 0.129) 2026-10-02
+0.150,0.120,0.197,0.129,0                    experiments/refQ1_loading_generality.py        PII selected-frame gap P1 0.150 vs hold-fixed 0.120; hit 5 0.197 vs 0.129; hit 3 selected frame reducible (gap 0) 2026-10-02
+3->1,2->1,2->1,2->1,3->1,4->1,2->1,4->1      experiments/refQ1_verify_hold_fixed.py         PII tab:holdfixed / tab:verify lobes K PLB -> hold-fixed; all border states drain 32/32,8/8,4/4,4/4,3/3,2/2,4/4,3/3; longest drain 4,4,3,3,2,2,3,2 2026-10-02
+1,1,2,2,2,2,2,2                              experiments/refQ1_verify_hold_fixed.py         PII lem:holdfixed remark: max|U| equals max|UV| on all 8 fibres (1 on P1 and the table, 2 on the six k*=2 fibres); mean nonzeros per move U vs UV: P1 3.250/3.250, table 4.000/4.000, k*=2 fibres 2.500/2.500, 2.000/2.000, 2.500/2.500, 2.500/2.750 (+10%), 2.500/2.500, 2.333/2.333 2026-10-02
+1,3.571,3.714,4.000                          experiments/refQ1_sh16_loading_aggregate.py    PII lem:holdfixed remark: SH16 largest entry 1 for the PLB and every hold-fixed U V_k; mean nonzeros per move PLB 3.571, HF k=1..10: 3.286,3.500,3.500,3.500,3.714 (rule k=5),3.714,4.000 (k=8),3.714 2026-10-02
+52,48,24,24                                  experiments/refQ1_partition_dividing_line.py   PII tab:dividing integral PLBs (P1 40 + table 12), irreducible 48 (4 reducible P1 free-block partitions gap 0), K=1 24, K>=2 24 2026-10-02
+-0.008..0.000,0.984..0.999                   experiments/refQ1_partition_dividing_line.py   PII slope ranges K=1 and K>=2 over 48 irreducible partitions; K=1 gap(1e-6)>=0.10 (P1 0.101-0.150, table 0.226-0.342); K>=2 gap<=3.8e-6; every K=1 partition drains (24/24) 2026-10-02
+16,20,8,4                                    experiments/refQ1_partition_dividing_line.py   PII tab:dividing counts (K=1,K>=2): P1 (16,20), table (8,4). P1: 20 free-block partitions of which 16 irreducible (all K=1; 4 reducible, gap 0) and 20 pivot-block partitions (all irreducible, K=3 to 23 lobes); table: 4 free (all K=1) and 8 pivot (4 with K=1, 4 with K=2) 2026-10-02
+8.3018e-8,0.06758,1.006,-0.006,8.1e5,0.1197,0.56 experiments/refQ1_nb_augmented_basis.py        PII gamma-augmented K_1 on P1 (alpha 1.9): PLB gap at mu=1e-6, hold-fixed gap, slopes, ratio 814070, Poisson hold-fixed 0.1197, ratio NB/Poisson 0.565 2026-10-02
+0.1305,0.1313,0.01105,11.82,0.0356           experiments/split_escape/exp3b_fusion_basis.py PII fusion: SR in reduced band + hold-fixed table basis gap at mu=1e-4 (1e-2: 0.1313), identical on kappa=4.95 and 7.78; reflective split ladder 0.01105; ratio 11.82; split ladder on recombined bases 0.0356 2026-10-02
+0.572,0.594,1.04,4.74,4.92,57.2              experiments/refQ1_sh16_loading.py              PII SH16 unfloored max-entropy Poisson fitted means, five smallest then the next; rule theta<9.2 selects k=5; PLB moves 5,14,5 of 14 columns for the three pivot low cells 2026-10-02
+7.06e-5,21                                   experiments/refQ1_sh16_loading_aggregate.py    PII SH16 loading PLB worst ESS per iteration (mean of 5 seeds) and ~21 effective samples in 3e5; Hopper results/q1_sh16_loading/seed*.json 2026-10-02
+1.40,1.23,5.20,8.11                          experiments/refQ1_sh16_loading_aggregate.py    PII tab:hf-sh16 HF_1..HF_4 vs SR per iter (per s 1.41,1.20,5.78,7.74); chain 5 seeds 2026-10-02
+75.44(9.74),101.83(13.12)                    experiments/refQ1_sh16_loading_aggregate.py    PII tab:hf-sh16 HF_5 (rule) vs SR per iter and per s; us/step 209.9 vs 283.3; chain 2026-10-02
+75.83,55.69,78.71                            experiments/refQ1_sh16_loading_aggregate.py    PII tab:hf-sh16 HF_6, HF_8, HF_10 per iter (per s 100.62,72.89,99.09); chain 2026-10-02
+64.17(8.68),83.59(11.26)                     experiments/refQ1_sh16_loading_aggregate.py    PII tab:hf-sh16 WU_5 (PLB weight 0.1) per iter and per s; 0.85 of HF_5; chain 2026-10-02
+247.66(51.25),300.79(63.42),203.79(42.62),36.6 experiments/refQ1_sh16_loading_aggregate.py    PII tab:hf-sh16 pilot-selected union per iter, per s, per s with pilot charged (36.6 s mean pilot); ratio to HF_5 3.28; chain 2026-10-02
+0.14(0.01),0.26(0.04)                        experiments/refQ1_sh16_loading_aggregate.py    PII tab:hf-sh16 reflective B_max=2 vs SR per iter and per s (us/step 164.5); chain 2026-10-02
+# --- Q2 (Martin Hazelton point 2): simulated-tempering tuning on P1, exact joint operator, results/refQ2_tempering_tuning.txt ---
+0.091,0.107,0.142,0.302,0.577,0.999          experiments/refQ2_tempering_tuning.py          PII tab:tuning part C: slope of gap in mu over 1e-2..1e-6, K=12, beta_min=0,.05,.10,.25,.50; untempered 0.999 2026-10-02
+0.01716,0.01654,0.01653,0.01653              experiments/refQ2_tempering_tuning.py          PII part A: K=2 ladder {1,0} gap at mu=1e-2,1e-4,1e-6,1e-8 2026-10-02
+1.322,1.567,1.603,1.606                      experiments/refQ2_tempering_tuning.py          PII part S1: Rw(K=2)/Rw({1,1/2,0}) at mu=1e-2,1e-4,1e-6,1e-8 2026-10-02
+3.00,9.93,19.75,35.00                        experiments/refQ2_tempering_tuning.py          PII part S1: Rw(K=2)/Rw(scaled K*=ceil(log2 1/mu)+1) with K*=8,15,21,28 2026-10-02
+0.957,0.963,0.996,0.974,0.850,0.727,0.555    experiments/refQ2_tempering_tuning.py          PII part S2: K*Rw(K)/(2Rw(2)) at mu=1e-4, K=3,4,6,8,12,16,24 (Rw falls roughly as 1/K) 2026-10-02
+1.302-1.891                                  experiments/refQ2_tempering_tuning.py          PII part S3: Rw(equal-acceptance)/Rw(linear) over K=4,8,15 and mu=1e-2,1e-4,1e-6 (text 1.3 to 1.9) 2026-10-02
+1.000,0.967,0.567                            experiments/refQ2_tempering_tuning.py          PII part E: K=2, mu=1e-4, rho=1 efficiency relative to best q at q=.25,.5,.75 2026-10-02
+0.8801,0.8642,0.25                           experiments/refQ2_tempering_tuning.py          PII part D: median worst8 efficiency at per-rung log-weight sigma=0.25 (K=15 mu=1e-4; K=21 mu=1e-6); tolerance sigma=0.25 2026-10-02
+-2.90,0.40,-1.20,1.3932                      experiments/refQ2_tempering_tuning.py          PII part D: K=2 single log-weight delta window with efficiency>=0.8, argmax and max ratio; R5 at delta=-3: 0.0949 2026-10-02
+1.0051,0.9049,1.0031,0.9749,1.0003,0.9913    experiments/refQ2_tempering_tuning.py          PII part F: K=2 mu=1e-4 reverse estimator, exact iid draws n=100,1000,10000: worst8 median and p10 2026-10-02
+0.9638,0.7623,0.9893,0.9244,1.0075,0.9855    experiments/refQ2_tempering_tuning.py          PII part F2: K=2 mu=1e-4 mode-started MCMC pilot, reverse, n=100,1000,10000: median and p10 2026-10-02
+-0.8805,-0.2935,0.0372,-0.0001               experiments/refQ2_tempering_tuning.py          PII part F: K=2 mu=1e-4 mean log-weight error forward n=100, n=1e5; reverse n=100, n=1e5; forward R5 0.5737-0.8515 2026-10-02
+0.823,0.987                                  experiments/refQ2_tempering_tuning.py          PII part R: K=2,q=.5 default fraction of best configuration over 9 cells (mu x rho): min 0.823, max 0.987 2026-10-02
+0.3493,0.2433,0.1391,0.0781,0.0580;1.000,1.000,0.907,0.730,0.711 experiments/refQ2_tempering_tuning.py          PII part I: overlap(target,uniform) for s=0..4 and K=2 fraction of best (K=3 equal-acceptance best at s>=2); P1 NB overlap 0.3806 2026-10-02
+0.833,1.019,0.848,1.064                      experiments/refQ2_tempering_tuning.py          PII part G: PT/ST worst7 ESS per iter at mu=1e-4: exact K=2,K=3; Monte Carlo K=2,K=3 2026-10-02
+3.11e-15,2.6e-16,1.005                       experiments/refQ2_tempering_tuning.py          PII gates: G1 builder agreement, G3 max relative DB violation, G5 MC/exact AV ratio 2026-10-02
+0.0165,0.0182,0.0094                         experiments/refQ2_tempering_tuning.py          PII split-vs-tempering qualifier: K=2 gap at q=1/2 (0.01654), 3-rung split 0.0182 (existing), 3-rung tempering 0.0094; K=2 at q=.25 0.0186 2026-10-02
+40,36,16,20,0.995-0.999,-0.008-0.000         experiments/refQ1_partition_dividing_line.py   PII tab:dividing P1 row: 40 integral PLBs, 36 irreducible, counts (K=1,K>=2)=(16,20), slope ranges K=1 [-0.008,0.000], K>=2 [0.995,0.999] 2026-10-02
+12,12,8,4,-0.005..-0.003,0.984               experiments/refQ1_partition_dividing_line.py   PII tab:dividing table row: 12 integral PLBs, 12 irreducible, counts (8,4), slope ranges K=1 [-0.005,-0.003], K>=2 0.984 2026-10-02
+0.572,1.04,4.74                              experiments/refQ1_sh16_loading.py              PII SH16 loading: three low cells (means 0.572, 1.04, 4.74) are PLB pivots moved by 5, 14, 5 of 14 columns of U; cells of mean 0.594 and 4.92 are free (1 column); checked by direct count of U rows 2026-10-02 (inline check with fibresampler/problems.py A_P2 cols1 [0,6,12,17,18,19,20]) 2026-10-02
+1.01,1.00,2.73,0.83,1.06,0.92                experiments/refQ1_sh16_aggregate.py            PI tab:basis-sh16 cost/PLB: uniform SR-LLL 1.01 (98.3/97.6 us/step), union 1.00 (97.9), Ref-B2 2.73 (266.8); fitted Poisson SR-LLL 0.83 (219.9/265.9), union 1.06 (281.0), Ref-B2 0.92 (245.5) 2026-10-02
+255-297,213.5-225.0,0.8e-4..5.3e-4,3.7e-3..5.2e-3 experiments/refQ1_sh16_loading_aggregate.py    PII tab:hf-sh16 ranges: HF_1..4 us/step 254.9-296.5 and ESS/iter 7.95e-5-5.32e-4; HF_6,8,10 us/step 213.5-225.0 and ESS/iter 3.71e-3-5.19e-3; pilot union 234.3 us/step 1.56e-2; WU_5 217.4 4.23e-3; Ref-B2 9.64e-6 2026-10-02

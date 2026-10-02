@@ -69,7 +69,7 @@ print(gap(bview, lw), info["chosen"], gap(with_basis(bview, V), lw))  # 0.0325, 
 | `experiments/m4_*.py` | real-data ESS-per-second benchmarks (Auckland SH16 and other networks) |
 | `helpers/` | exact-SLEM and enumeration helpers for the rim, counting and mixture-sampler experiments |
 | `hopper/`, `experiments/*.sbatch` | SLURM templates (site independent: set `PYTHON`, submit from the repository root) |
-| `results/` | reference outputs of every script (text, json, figures), tracked so that a re-run can be compared with `git diff` |
+| `results/` | reference outputs of every script (text, json, figures), tracked so that a re-run can be compared with `git diff`; `results/numbers.txt` is the ledger of the values quoted in the papers, one line per value with the script that produced it, an identifier and the date |
 | `tests/` | fast regression tests of the exact numbers quoted in the papers |
 
 `REPRODUCE.md` lists the scripts behind the results in the papers, with their output files and run times.
